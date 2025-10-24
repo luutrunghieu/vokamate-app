@@ -1,8 +1,11 @@
 import { SAMPLE_DEFINITIONS, SAMPLE_HISTORY, WORD_LIST } from "@/constants/sample-data";
+import { useVocabulary } from "@/contexts/vocabulary-context";
 import { HistoryItem, WordDefinition } from "@/types/translation";
+import { VocabularyFolder } from "@/types/vocabulary";
 import { useMemo, useState } from "react";
 
 export function useTranslation() {
+  const { addWordToFolder } = useVocabulary();
   const [searchText, setSearchText] = useState("");
   const [history, setHistory] = useState<HistoryItem[]>(SAMPLE_HISTORY);
   const [currentDefinition, setCurrentDefinition] = useState<WordDefinition | null>(null);
@@ -46,13 +49,20 @@ export function useTranslation() {
     setSearchText("");
   };
 
-  const toggleSaveDefinition = (definitionId: string) => {
+  const saveDefinitionToFolder = async (definitionId: string, folder: VocabularyFolder) => {
     if (!currentDefinition) return;
 
+    const definition = currentDefinition.definitions.find((def) => def.id === definitionId);
+    if (!definition) return;
+
+    // Save the word to the folder
+    await addWordToFolder(folder.id, definition.word, definition.meaning);
+
+    // Mark the definition as saved
     setCurrentDefinition({
       ...currentDefinition,
       definitions: currentDefinition.definitions.map((def) =>
-        def.id === definitionId ? { ...def, saved: !def.saved } : def
+        def.id === definitionId ? { ...def, saved: true } : def
       ),
     });
   };
@@ -79,7 +89,7 @@ export function useTranslation() {
     suggestions,
     translate,
     goBack,
-    toggleSaveDefinition,
+    saveDefinitionToFolder,
     clearHistory,
     selectHistoryItem,
     selectSuggestion,

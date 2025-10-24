@@ -19,7 +19,7 @@ export default function TranslateScreen() {
     suggestions,
     translate,
     goBack,
-    toggleSaveDefinition,
+    saveDefinitionToFolder,
     clearHistory,
     selectHistoryItem,
     selectSuggestion,
@@ -52,7 +52,7 @@ export default function TranslateScreen() {
           ) : currentDefinition ? (
             <DefinitionView
               definition={currentDefinition}
-              onToggleSave={toggleSaveDefinition}
+              onSaveToFolder={saveDefinitionToFolder}
               onPlayPronunciation={handlePlayPronunciation}
             />
           ) : (

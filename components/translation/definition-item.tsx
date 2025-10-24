@@ -7,10 +7,10 @@ import { StyleSheet, TouchableOpacity, View } from "react-native";
 interface DefinitionItemProps {
   definition: Definition;
   index: number;
-  onToggleSave: (definitionId: string) => void;
+  onSave: (definitionId: string) => void;
 }
 
-export function DefinitionItem({ definition, index, onToggleSave }: DefinitionItemProps) {
+export function DefinitionItem({ definition, index, onSave }: DefinitionItemProps) {
   const borderColor = useThemeColor({}, "border");
   const bgSecondary = useThemeColor({}, "backgroundSecondary");
   const textSecondary = useThemeColor({}, "textSecondary");
@@ -50,7 +50,8 @@ export function DefinitionItem({ definition, index, onToggleSave }: DefinitionIt
           { backgroundColor: bgSecondary },
           definition.saved && { backgroundColor: successColor + "20" },
         ]}
-        onPress={() => onToggleSave(definition.id)}
+        onPress={() => onSave(definition.id)}
+        disabled={definition.saved}
       >
         <IconSymbol
           name={definition.saved ? "bookmark.fill" : "bookmark"}

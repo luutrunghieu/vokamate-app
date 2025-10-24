@@ -1,5 +1,6 @@
 import { ThemedText } from "@/components/themed-text";
 import { ThemedView } from "@/components/themed-view";
+import { useThemeColor } from "@/hooks/use-theme-color";
 import { FlatList, StyleSheet, TouchableOpacity } from "react-native";
 
 interface SuggestionsListProps {
@@ -8,6 +9,9 @@ interface SuggestionsListProps {
 }
 
 export function SuggestionsList({ suggestions, onSelectSuggestion }: SuggestionsListProps) {
+  const textSecondary = useThemeColor({}, "textSecondary");
+  const borderColor = useThemeColor({}, "border");
+
   if (suggestions.length === 0) {
     return null;
   }
@@ -19,11 +23,11 @@ export function SuggestionsList({ suggestions, onSelectSuggestion }: Suggestions
         keyExtractor={(item, index) => `${item}-${index}`}
         renderItem={({ item }) => (
           <TouchableOpacity style={styles.suggestionItem} onPress={() => onSelectSuggestion(item)}>
-            <ThemedText style={styles.suggestionText}>{item}</ThemedText>
-            <ThemedText style={styles.arrow}>→</ThemedText>
+            <ThemedText style={[styles.suggestionText, { color: textSecondary }]}>{item}</ThemedText>
+            <ThemedText style={[styles.arrow, { color: borderColor }]}>→</ThemedText>
           </TouchableOpacity>
         )}
-        ItemSeparatorComponent={() => <ThemedView style={styles.separator} />}
+        ItemSeparatorComponent={() => <ThemedView style={[styles.separator, { backgroundColor: borderColor }]} />}
       />
     </ThemedView>
   );
@@ -32,7 +36,6 @@ export function SuggestionsList({ suggestions, onSelectSuggestion }: Suggestions
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#0A0A0A",
   },
   suggestionItem: {
     flexDirection: "row",
@@ -43,15 +46,12 @@ const styles = StyleSheet.create({
   },
   suggestionText: {
     fontSize: 16,
-    color: "#8E8E93",
   },
   arrow: {
     fontSize: 16,
-    color: "#3A3A3C",
   },
   separator: {
     height: 1,
-    backgroundColor: "#1C1C1E",
     marginLeft: 20,
   },
 });

@@ -1,5 +1,6 @@
 import { ThemedText } from "@/components/themed-text";
 import { IconSymbol } from "@/components/ui/icon-symbol";
+import { useThemeColor } from "@/hooks/use-theme-color";
 import { Definition } from "@/types/translation";
 import { StyleSheet, TouchableOpacity, View } from "react-native";
 
@@ -10,15 +11,24 @@ interface DefinitionItemProps {
 }
 
 export function DefinitionItem({ definition, index, onToggleSave }: DefinitionItemProps) {
+  const borderColor = useThemeColor({}, "border");
+  const bgSecondary = useThemeColor({}, "backgroundSecondary");
+  const textSecondary = useThemeColor({}, "textSecondary");
+  const tintColor = useThemeColor({}, "tint");
+  const successColor = useThemeColor({}, "success");
+  const iconColor = useThemeColor({}, "icon");
+
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, { borderBottomColor: borderColor }]}>
       <View style={styles.header}>
-        <View style={styles.numberContainer}>
-          <ThemedText style={styles.number}>{index + 1}</ThemedText>
+        <View style={[styles.numberContainer, { backgroundColor: bgSecondary }]}>
+          <ThemedText style={[styles.number, { color: textSecondary }]}>{index + 1}</ThemedText>
         </View>
         <View style={styles.titleContainer}>
-          <ThemedText style={styles.word}>{definition.word}</ThemedText>
-          <ThemedText style={styles.type}>{definition.wordType}</ThemedText>
+          <ThemedText style={[styles.word, { color: tintColor }]}>{definition.word}</ThemedText>
+          <ThemedText style={[styles.type, { backgroundColor: bgSecondary, color: textSecondary }]}>
+            {definition.wordType}
+          </ThemedText>
         </View>
       </View>
 
@@ -27,7 +37,7 @@ export function DefinitionItem({ definition, index, onToggleSave }: DefinitionIt
       {definition.examples.length > 0 && (
         <View style={styles.examplesContainer}>
           {definition.examples.map((example, idx) => (
-            <ThemedText key={idx} style={styles.exampleText}>
+            <ThemedText key={idx} style={[styles.exampleText, { color: textSecondary }]}>
               {example}
             </ThemedText>
           ))}
@@ -35,15 +45,21 @@ export function DefinitionItem({ definition, index, onToggleSave }: DefinitionIt
       )}
 
       <TouchableOpacity
-        style={[styles.saveButton, definition.saved && styles.saveButtonActive]}
+        style={[
+          styles.saveButton,
+          { backgroundColor: bgSecondary },
+          definition.saved && { backgroundColor: successColor + "20" },
+        ]}
         onPress={() => onToggleSave(definition.id)}
       >
         <IconSymbol
           name={definition.saved ? "bookmark.fill" : "bookmark"}
           size={16}
-          color={definition.saved ? "#4CAF50" : "#666"}
+          color={definition.saved ? successColor : iconColor}
         />
-        <ThemedText style={[styles.saveButtonText, definition.saved && styles.saveButtonTextActive]}>
+        <ThemedText
+          style={[styles.saveButtonText, { color: textSecondary }, definition.saved && { color: successColor }]}
+        >
           {definition.saved ? "Đã lưu" : "Lưu từ này"}
         </ThemedText>
       </TouchableOpacity>
@@ -56,7 +72,6 @@ const styles = StyleSheet.create({
     marginBottom: 28,
     paddingBottom: 24,
     borderBottomWidth: 1,
-    borderBottomColor: "#2A2A2A",
   },
   header: {
     flexDirection: "row",
@@ -68,14 +83,12 @@ const styles = StyleSheet.create({
     width: 32,
     height: 32,
     borderRadius: 16,
-    backgroundColor: "#2A2A2A",
     justifyContent: "center",
     alignItems: "center",
   },
   number: {
     fontSize: 16,
     fontWeight: "700",
-    color: "#888",
   },
   titleContainer: {
     flex: 1,
@@ -87,21 +100,17 @@ const styles = StyleSheet.create({
   word: {
     fontSize: 19,
     fontWeight: "600",
-    color: "#4A9EFF",
   },
   type: {
     fontSize: 12,
-    color: "#A0A0A0",
     fontWeight: "600",
     paddingHorizontal: 10,
     paddingVertical: 4,
-    backgroundColor: "#2A2A2A",
     borderRadius: 12,
     overflow: "hidden",
   },
   meaning: {
     fontSize: 16,
-    color: "#C0C0C0",
     lineHeight: 24,
     marginBottom: 14,
     paddingLeft: 40,
@@ -113,7 +122,6 @@ const styles = StyleSheet.create({
   },
   exampleText: {
     fontSize: 15,
-    color: "#888",
     lineHeight: 22,
   },
   saveButton: {
@@ -123,19 +131,11 @@ const styles = StyleSheet.create({
     paddingHorizontal: 18,
     paddingVertical: 10,
     borderRadius: 20,
-    backgroundColor: "#1E1E1E",
     gap: 8,
     marginLeft: 40,
   },
-  saveButtonActive: {
-    backgroundColor: "#1A3A2A",
-  },
   saveButtonText: {
     fontSize: 14,
-    color: "#888",
     fontWeight: "500",
-  },
-  saveButtonTextActive: {
-    color: "#4CAF50",
   },
 });

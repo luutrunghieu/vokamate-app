@@ -5,6 +5,7 @@ import { HistoryList } from "@/components/translation/history-list";
 import { SearchInput } from "@/components/translation/search-input";
 import { SuggestionsList } from "@/components/translation/suggestions-list";
 import { IconSymbol } from "@/components/ui/icon-symbol";
+import { useThemeColor } from "@/hooks/use-theme-color";
 import { useTranslation } from "@/hooks/use-translation";
 import { StyleSheet, TouchableOpacity } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
@@ -24,18 +25,22 @@ export default function TranslateScreen() {
     selectSuggestion,
   } = useTranslation();
 
+  const backgroundColor = useThemeColor({}, "background");
+  const bgSecondary = useThemeColor({}, "backgroundSecondary");
+  const iconColor = useThemeColor({}, "icon");
+
   const handlePlayPronunciation = (accent: "us" | "uk") => {
     // TODO: Implement pronunciation playback
     console.log(`Playing ${accent.toUpperCase()} pronunciation`);
   };
 
   return (
-    <SafeAreaView style={styles.safeArea} edges={["top"]}>
+    <SafeAreaView style={[styles.safeArea, { backgroundColor }]} edges={["top"]}>
       <ThemedView style={styles.container}>
         <ThemedView style={styles.header}>
           <ThemedText type="title">Dịch</ThemedText>
-          <TouchableOpacity style={styles.settingsButton}>
-            <IconSymbol name="slider.horizontal.3" size={24} color="#E0E0E0" />
+          <TouchableOpacity style={[styles.settingsButton, { backgroundColor: bgSecondary }]}>
+            <IconSymbol name="slider.horizontal.3" size={24} color={iconColor} />
           </TouchableOpacity>
         </ThemedView>
 
@@ -62,11 +67,9 @@ export default function TranslateScreen() {
 const styles = StyleSheet.create({
   safeArea: {
     flex: 1,
-    backgroundColor: "#0A0A0A",
   },
   container: {
     flex: 1,
-    backgroundColor: "#0A0A0A",
   },
   header: {
     flexDirection: "row",
@@ -75,14 +78,10 @@ const styles = StyleSheet.create({
     paddingHorizontal: 16,
     paddingVertical: 12,
   },
-  title: {
-    color: "#FFFFFF",
-  },
   settingsButton: {
     width: 44,
     height: 44,
     borderRadius: 22,
-    backgroundColor: "#1E1E1E",
     justifyContent: "center",
     alignItems: "center",
   },

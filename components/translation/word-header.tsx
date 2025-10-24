@@ -1,5 +1,6 @@
 import { ThemedText } from "@/components/themed-text";
 import { IconSymbol } from "@/components/ui/icon-symbol";
+import { useThemeColor } from "@/hooks/use-theme-color";
 import { StyleSheet, TouchableOpacity, View } from "react-native";
 
 interface WordHeaderProps {
@@ -9,22 +10,28 @@ interface WordHeaderProps {
 }
 
 export function WordHeader({ word, pronunciation, onPlayPronunciation }: WordHeaderProps) {
+  const borderColor = useThemeColor({}, "border");
+  const textSecondary = useThemeColor({}, "textSecondary");
+  const iconColor = useThemeColor({}, "icon");
+
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, { borderBottomColor: borderColor }]}>
       <View style={styles.wordContainer}>
         <ThemedText type="title" style={styles.word}>
           {word}
         </ThemedText>
-        {pronunciation && <ThemedText style={styles.pronunciation}>{pronunciation}</ThemedText>}
+        {pronunciation && (
+          <ThemedText style={[styles.pronunciation, { color: textSecondary }]}>{pronunciation}</ThemedText>
+        )}
       </View>
 
       <View style={styles.audioButtons}>
         <TouchableOpacity style={styles.speakerButton} onPress={() => onPlayPronunciation?.("us")}>
-          <IconSymbol name="speaker.wave.2.fill" size={18} color="#888" />
+          <IconSymbol name="speaker.wave.2.fill" size={18} color={iconColor} />
           <ThemedText style={styles.flag}>US</ThemedText>
         </TouchableOpacity>
         <TouchableOpacity style={styles.speakerButton} onPress={() => onPlayPronunciation?.("uk")}>
-          <IconSymbol name="speaker.wave.2.fill" size={18} color="#888" />
+          <IconSymbol name="speaker.wave.2.fill" size={18} color={iconColor} />
           <ThemedText style={styles.flag}>UK</ThemedText>
         </TouchableOpacity>
       </View>
@@ -40,19 +47,15 @@ const styles = StyleSheet.create({
     marginBottom: 16,
     paddingBottom: 16,
     borderBottomWidth: 1,
-    borderBottomColor: "#2A2A2A",
   },
   wordContainer: {
     flexDirection: "column",
   },
   word: {
     fontSize: 24,
-    color: "#FFFFFF",
     marginBottom: 8,
   },
-  pronunciation: {
-    color: "#888",
-  },
+  pronunciation: {},
   audioButtons: {
     flexDirection: "row",
     gap: 12,

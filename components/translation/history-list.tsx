@@ -1,5 +1,6 @@
 import { ThemedText } from "@/components/themed-text";
 import { IconSymbol } from "@/components/ui/icon-symbol";
+import { useThemeColor } from "@/hooks/use-theme-color";
 import { HistoryItem } from "@/types/translation";
 import { FlatList, StyleSheet, TouchableOpacity, View } from "react-native";
 import { ThemedView } from "../themed-view";
@@ -11,22 +12,29 @@ interface HistoryListProps {
 }
 
 export function HistoryList({ data, onClearHistory, onItemPress }: HistoryListProps) {
+  const iconColor = useThemeColor({}, "icon");
+  const borderColor = useThemeColor({}, "border");
+  const textSecondary = useThemeColor({}, "textSecondary");
+
   const renderItem = ({ item }: { item: HistoryItem }) => (
-    <TouchableOpacity style={styles.historyItem} onPress={() => onItemPress?.(item)}>
+    <TouchableOpacity
+      style={[styles.historyItem, { borderBottomColor: borderColor }]}
+      onPress={() => onItemPress?.(item)}
+    >
       <View style={styles.historyLeft}>
-        <IconSymbol name="clock" size={18} color="#888" />
+        <IconSymbol name="clock" size={18} color={iconColor} />
         <ThemedText style={styles.historyText}>{item.word}</ThemedText>
       </View>
-      <IconSymbol name="arrow.right" size={22} color="#555" />
+      <IconSymbol name="arrow.right" size={22} color={iconColor} />
     </TouchableOpacity>
   );
 
   return (
     <ThemedView style={styles.container}>
       <View style={styles.header}>
-        <ThemedText style={styles.title}>Dịch gần đây</ThemedText>
+        <ThemedText style={[styles.title, { color: textSecondary }]}>Dịch gần đây</ThemedText>
         <TouchableOpacity onPress={onClearHistory} style={styles.clearButtonContainer}>
-          <ThemedText style={styles.clearButton}>Xóa lịch sử</ThemedText>
+          <ThemedText style={[styles.clearButton, { color: textSecondary }]}>Xóa lịch sử</ThemedText>
         </TouchableOpacity>
       </View>
 
@@ -37,7 +45,9 @@ export function HistoryList({ data, onClearHistory, onItemPress }: HistoryListPr
         style={styles.list}
         contentContainerStyle={styles.listContent}
         showsVerticalScrollIndicator={false}
-        ListEmptyComponent={<ThemedText style={styles.emptyText}>Chưa có lịch sử dịch</ThemedText>}
+        ListEmptyComponent={
+          <ThemedText style={[styles.emptyText, { color: textSecondary }]}>Chưa có lịch sử dịch</ThemedText>
+        }
       />
     </ThemedView>
   );
@@ -56,16 +66,13 @@ const styles = StyleSheet.create({
     paddingLeft: 10,
   },
   title: {
-    color: "#999",
     fontWeight: "bold",
   },
   clearButtonContainer: {
     paddingHorizontal: 4,
     paddingVertical: 4,
   },
-  clearButton: {
-    color: "#666",
-  },
+  clearButton: {},
   list: {
     flex: 1,
     paddingHorizontal: 10,
@@ -79,7 +86,6 @@ const styles = StyleSheet.create({
     alignItems: "center",
     paddingVertical: 14,
     borderBottomWidth: 1,
-    borderBottomColor: "#2A2A2A",
   },
   historyLeft: {
     flexDirection: "row",
@@ -87,23 +93,13 @@ const styles = StyleSheet.create({
     gap: 16,
     flex: 1,
   },
-  iconCircle: {
-    width: 36,
-    height: 36,
-    borderRadius: 18,
-    backgroundColor: "#1E1E1E",
-    justifyContent: "center",
-    alignItems: "center",
-  },
   historyText: {
     fontSize: 17,
-    color: "#E0E0E0",
     letterSpacing: 0.2,
   },
   emptyText: {
     textAlign: "center",
     marginTop: 60,
     fontSize: 16,
-    color: "#666",
   },
 });

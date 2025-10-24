@@ -1,4 +1,5 @@
 import { ThemedText } from "@/components/themed-text";
+import { useThemeColor } from "@/hooks/use-theme-color";
 import { WordDefinition } from "@/types/translation";
 import { ScrollView, StyleSheet, View } from "react-native";
 import { DefinitionItem } from "./definition-item";
@@ -11,9 +12,12 @@ interface DefinitionViewProps {
 }
 
 export function DefinitionView({ definition, onToggleSave, onPlayPronunciation }: DefinitionViewProps) {
+  const cardBg = useThemeColor({}, "card");
+  const textSecondary = useThemeColor({}, "textSecondary");
+
   return (
     <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
-      <View style={styles.card}>
+      <View style={[styles.card, { backgroundColor: cardBg }]}>
         <WordHeader
           word={definition.word}
           pronunciation={definition.pronunciation}
@@ -25,7 +29,7 @@ export function DefinitionView({ definition, onToggleSave, onPlayPronunciation }
             <DefinitionItem key={def.id} definition={def} index={idx} onToggleSave={onToggleSave} />
           ))
         ) : (
-          <ThemedText style={styles.emptyText}>Không tìm thấy định nghĩa</ThemedText>
+          <ThemedText style={[styles.emptyText, { color: textSecondary }]}>Không tìm thấy định nghĩa</ThemedText>
         )}
       </View>
     </ScrollView>
@@ -37,7 +41,6 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   card: {
-    backgroundColor: "#1A1A1A",
     borderRadius: 16,
     paddingVertical: 14,
     paddingHorizontal: 16,
@@ -54,6 +57,5 @@ const styles = StyleSheet.create({
     textAlign: "center",
     marginTop: 60,
     fontSize: 16,
-    color: "#666",
   },
 });

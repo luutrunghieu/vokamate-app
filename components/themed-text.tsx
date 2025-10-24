@@ -9,7 +9,10 @@ export type ThemedTextProps = TextProps & {
 };
 
 export function ThemedText({ style, lightColor, darkColor, type = "default", ...rest }: ThemedTextProps) {
-  const color = useThemeColor({ light: lightColor, dark: darkColor }, "text");
+  const defaultColor = useThemeColor({ light: lightColor, dark: darkColor }, "text");
+  const linkColor = useThemeColor({}, "tint");
+
+  const color = type === "link" ? linkColor : defaultColor;
 
   return (
     <Text
@@ -49,6 +52,5 @@ const styles = StyleSheet.create({
   link: {
     lineHeight: 30,
     fontSize: 16,
-    color: "#0a7ea4",
   },
 });

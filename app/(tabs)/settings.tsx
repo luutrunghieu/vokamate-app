@@ -1,3 +1,4 @@
+import SignOutButton from "@/components/social-auth-buttons/sign-out-button";
 import { ThemedText } from "@/components/themed-text";
 import { ThemedView } from "@/components/themed-view";
 import { useTheme, type ThemeMode } from "@/contexts/theme-context";
@@ -80,6 +81,18 @@ export default function SettingsScreen() {
                   );
                 })}
               </View>
+            </ThemedView>
+          </ThemedView>
+
+          {/* Account Section */}
+          <ThemedView style={styles.section}>
+            <View style={styles.sectionHeader}>
+              <Ionicons name="person-circle" size={20} color={tintColor} style={styles.sectionIcon} />
+              <ThemedText style={styles.sectionTitle}>Tài khoản</ThemedText>
+            </View>
+
+            <ThemedView style={[styles.card, { backgroundColor: cardColor, borderColor }]}>
+              <SignOutButton />
             </ThemedView>
           </ThemedView>
 

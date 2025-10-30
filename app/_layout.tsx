@@ -4,8 +4,10 @@ import { StatusBar } from "expo-status-bar";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 import "react-native-reanimated";
 
+import AuthProvider from "@/contexts/auth-context";
 import { ThemeProvider, useTheme } from "@/contexts/theme-context";
 import { VocabularyProvider } from "@/contexts/vocabulary-context";
+import { useAuthContext } from "@/hooks/use-auth-context";
 
 export const unstable_settings = {
   anchor: "(tabs)",
@@ -13,13 +15,20 @@ export const unstable_settings = {
 
 function RootLayoutContent() {
   const { colorScheme } = useTheme();
+  const { isLoggedIn } = useAuthContext();
 
   return (
     <NavigationThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}>
       <Stack>
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-        <Stack.Screen name="modal" options={{ presentation: "modal", title: "Modal" }} />
-        <Stack.Screen name="folder-detail" options={{ headerShown: false }} />
+        <Stack.Protected guard={isLoggedIn}>
+          <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+          <Stack.Screen name="modal" options={{ presentation: "modal", title: "Modal" }} />
+          <Stack.Screen name="folder-detail" options={{ headerShown: false }} />
+        </Stack.Protected>
+        <Stack.Protected guard={!isLoggedIn}>
+          <Stack.Screen name="login" options={{ headerShown: false }} />
+        </Stack.Protected>
+        <Stack.Screen name="+not-found" />
       </Stack>
       <StatusBar style={colorScheme === "dark" ? "light" : "dark"} />
     </NavigationThemeProvider>
@@ -30,9 +39,11 @@ export default function RootLayout() {
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
       <ThemeProvider>
-        <VocabularyProvider>
-          <RootLayoutContent />
-        </VocabularyProvider>
+        <AuthProvider>
+          <VocabularyProvider>
+            <RootLayoutContent />
+          </VocabularyProvider>
+        </AuthProvider>
       </ThemeProvider>
     </GestureHandlerRootView>
   );

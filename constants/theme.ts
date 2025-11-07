@@ -1,18 +1,40 @@
-/**
- * Below are the colors that are used in the app. The colors are defined in the light and dark mode.
- * There are many other ways to style your app. For example, [Nativewind](https://www.nativewind.dev/), [Tamagui](https://tamagui.dev/), [unistyles](https://reactnativeunistyles.vercel.app), etc.
- */
-
 import { Platform } from "react-native";
+import { tailwindColors } from "./tailwind-colors";
 
 const tintColorLight = "#11181C";
 const tintColorDark = "#ECEDEE";
 
 export const Colors = {
   light: {
+    // Tailwind-based colors
+
+    //Text
+    textPrimary: tailwindColors.slate[900],
+    textSecondary: tailwindColors.slate[500],
+    textTertiary: tailwindColors.slate[300],
+    textNegative: tailwindColors.red[600],
+    textPositive: tailwindColors.emerald[600],
+
+    //Outline
+    outlinePrimary: tailwindColors.slate[300],
+    outlineSecondary: tailwindColors.slate[200],
+    outlineRed: tailwindColors.red[600],
+    outlineRedLight: tailwindColors.red[300],
+
+    //Background
+    bgPrimary: tailwindColors.slate[100],
+    bgSecondary: tailwindColors.slate[200],
+    bgNegative: tailwindColors.red[500],
+    bgNegativeLight: tailwindColors.red[100],
+
+    //Foreground
+    fgPrimary: tailwindColors.slate[900],
+    fgSecondary: tailwindColors.slate[500],
+    fgTertiary: tailwindColors.slate[300],
+    fgNegative: tailwindColors.red[600],
+
+    // Original theme colors
     text: "#11181C",
-    textSecondary: "#687076",
-    textTertiary: "#9BA1A6",
     background: "#fff",
     backgroundSecondary: "#f5f5f5",
     backgroundTertiary: "#e8e8e8",
@@ -32,9 +54,35 @@ export const Colors = {
     info: "#3b82f6",
   },
   dark: {
+    // Tailwind-based colors (dark mode)
+
+    //Text
+    textPrimary: tailwindColors.slate[50],
+    textSecondary: tailwindColors.slate[400],
+    textTertiary: tailwindColors.slate[500],
+    textNegative: tailwindColors.red[400],
+    textPositive: tailwindColors.emerald[400],
+
+    //Outline
+    outlinePrimary: tailwindColors.slate[600],
+    outlineSecondary: tailwindColors.slate[700],
+    outlineRed: tailwindColors.red[500],
+    outlineRedLight: tailwindColors.red[400],
+
+    //Background
+    bgPrimary: tailwindColors.slate[900],
+    bgSecondary: tailwindColors.slate[800],
+    bgNegative: tailwindColors.red[600],
+    bgNegativeLight: tailwindColors.red[900],
+
+    //Foreground
+    fgPrimary: tailwindColors.slate[50],
+    fgSecondary: tailwindColors.slate[400],
+    fgTertiary: tailwindColors.slate[500],
+    fgNegative: tailwindColors.red[400],
+
+    // Original theme colors
     text: "#ECEDEE",
-    textSecondary: "#9BA1A6",
-    textTertiary: "#687076",
     background: "#151718",
     backgroundSecondary: "#1f2123",
     backgroundTertiary: "#2a2c2e",

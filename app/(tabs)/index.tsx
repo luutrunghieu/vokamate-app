@@ -1,11 +1,13 @@
 import { ThemedText } from "@/components/themed-text";
 import { ThemedView } from "@/components/themed-view";
+import { useAuthContext } from "@/hooks/use-auth-context";
 import { useThemeColor } from "@/hooks/use-theme-color";
 import { Ionicons } from "@expo/vector-icons";
 import { ScrollView, StyleSheet, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function HomeScreen() {
+  const { session, profile } = useAuthContext();
   const backgroundColor = useThemeColor({}, "background");
   const cardColor = useThemeColor({}, "card");
   const borderColor = useThemeColor({}, "border");
@@ -22,6 +24,26 @@ export default function HomeScreen() {
     if (hour < 18) return "Chào buổi chiều";
     return "Chào buổi tối";
   };
+
+  // Get user's display name from profile or session
+  const getUserName = () => {
+    // Try to get name from profile first
+    if (profile?.full_name) return profile.full_name;
+    if (profile?.name) return profile.name;
+
+    // Try to get name from session user metadata
+    if (session?.user?.user_metadata?.full_name) return session.user.user_metadata.full_name;
+    if (session?.user?.user_metadata?.name) return session.user.user_metadata.name;
+
+    // Fallback to email username (before @)
+    if (session?.user?.email) {
+      return session.user.email.split("@")[0];
+    }
+
+    return null;
+  };
+
+  const userName = getUserName();
 
   // Fake analytics data
   const stats = [
@@ -57,6 +79,7 @@ export default function HomeScreen() {
         <ThemedView style={styles.header}>
           <ThemedText type="title" style={styles.greeting}>
             {getGreeting()}
+            {userName ? `, ${userName}` : ""}
           </ThemedText>
           <ThemedText style={[styles.subtitle, { color: textSecondary }]}>
             Tiếp tục học tập để duy trì chuỗi của bạn! 🔥

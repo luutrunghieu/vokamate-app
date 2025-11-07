@@ -4,6 +4,8 @@ import { ThemedView } from "@/components/themed-view";
 import { useTheme, type ThemeMode } from "@/contexts/theme-context";
 import { useThemeColor } from "@/hooks/use-theme-color";
 import { Ionicons } from "@expo/vector-icons";
+import { router } from "expo-router";
+import { useEffect, useRef, useState } from "react";
 import { ScrollView, StyleSheet, TouchableOpacity, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
@@ -16,6 +18,40 @@ export default function SettingsScreen() {
   const textSecondary = useThemeColor({}, "textSecondary");
   const cardColor = useThemeColor({}, "card");
 
+  // Secret gesture: tap 5 times on title to open Testing page
+  const [tapCount, setTapCount] = useState(0);
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+  const handleTitlePress = () => {
+    const newCount = tapCount + 1;
+    setTapCount(newCount);
+
+    // Clear existing timeout
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+    }
+
+    // If reached 5 taps, navigate to testing page
+    if (newCount >= 5) {
+      setTapCount(0);
+      router.push("/(testing)/testing");
+      return;
+    }
+
+    // Reset counter after 2 seconds of no taps
+    timeoutRef.current = setTimeout(() => {
+      setTapCount(0);
+    }, 2000);
+  };
+
+  useEffect(() => {
+    return () => {
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+      }
+    };
+  }, []);
+
   const themeModes: { value: ThemeMode; label: string; icon: keyof typeof Ionicons.glyphMap }[] = [
     { value: "light", label: "Sáng", icon: "sunny" },
     { value: "dark", label: "Tối", icon: "moon" },
@@ -27,9 +63,11 @@ export default function SettingsScreen() {
       <ThemedView style={styles.container}>
         {/* Header */}
         <ThemedView style={styles.header}>
-          <ThemedText type="title" style={styles.headerTitle}>
-            Cài đặt
-          </ThemedText>
+          <TouchableOpacity onPress={handleTitlePress} activeOpacity={1}>
+            <ThemedText type="title" style={styles.headerTitle}>
+              Cài đặt
+            </ThemedText>
+          </TouchableOpacity>
           <ThemedText style={[styles.headerSubtitle, { color: textSecondary }]}>
             Tùy chỉnh trải nghiệm của bạn
           </ThemedText>

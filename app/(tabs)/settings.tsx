@@ -1,26 +1,28 @@
-import SignOutButton from "@/components/social-auth-buttons/sign-out-button";
 import { ThemedText } from "@/components/themed-text";
-import { ThemedView } from "@/components/themed-view";
-import { useTheme, type ThemeMode } from "@/contexts/theme-context";
+import { Button } from "@/components/ui/button";
+import { PageHeader } from "@/components/ui/page-header";
+import { useAuthContext } from "@/hooks/use-auth-context";
 import { useThemeColor } from "@/hooks/use-theme-color";
+import { supabase } from "@/lib/supabase";
 import { Ionicons } from "@expo/vector-icons";
 import { router } from "expo-router";
 import { useEffect, useRef, useState } from "react";
-import { ScrollView, StyleSheet, TouchableOpacity, View } from "react-native";
+import { Image, ScrollView, StyleSheet, TouchableOpacity, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function SettingsScreen() {
-  const backgroundColor = useThemeColor({}, "background");
-  const backgroundSecondary = useThemeColor({}, "backgroundSecondary");
-  const { themeMode, setThemeMode } = useTheme();
-  const borderColor = useThemeColor({}, "border");
-  const tintColor = useThemeColor({}, "tint");
+  const bgPrimary = useThemeColor({}, "bgPrimary");
+  const outlineSecondary = useThemeColor({}, "outlineSecondary");
+  const fgTertiary = useThemeColor({}, "fgTertiary");
+  const textPrimary = useThemeColor({}, "textPrimary");
   const textSecondary = useThemeColor({}, "textSecondary");
+  const tintColor = useThemeColor({}, "tint");
   const cardColor = useThemeColor({}, "card");
+  const { isLoggedIn, profile, session } = useAuthContext();
 
   // Secret gesture: tap 5 times on title to open Testing page
   const [tapCount, setTapCount] = useState(0);
-  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const handleTitlePress = () => {
     const newCount = tapCount + 1;
@@ -34,7 +36,7 @@ export default function SettingsScreen() {
     // If reached 5 taps, navigate to testing page
     if (newCount >= 5) {
       setTapCount(0);
-      router.push("/(testing)/testing");
+      router.push("/(_testing)/testing");
       return;
     }
 
@@ -52,150 +54,155 @@ export default function SettingsScreen() {
     };
   }, []);
 
-  const themeModes: { value: ThemeMode; label: string; icon: keyof typeof Ionicons.glyphMap }[] = [
-    { value: "light", label: "Sáng", icon: "sunny" },
-    { value: "dark", label: "Tối", icon: "moon" },
-    { value: "system", label: "Hệ thống", icon: "phone-portrait" },
+  // Get user display name and email
+  const userName = profile?.full_name || session?.user?.user_metadata?.full_name || "User";
+  const userEmail = session?.user?.email || "";
+  const userAvatar = profile?.avatar_url || session?.user?.user_metadata?.avatar_url;
+
+  const handleLoginPress = () => {
+    router.push("/login");
+  };
+
+  const handleSignOut = async () => {
+    const { error } = await supabase.auth.signOut();
+    if (error) {
+      console.error("Error signing out:", error);
+      return;
+    }
+    // Stay on current page, UI will automatically update to logged out state
+  };
+
+  const settingItems = [
+    { icon: "star", text: "Đánh giá ứng dụng" },
+    { icon: "mail", text: "Liên hệ hỗ trợ" },
+    { icon: "document-text", text: "Điều khoản & Chính sách" },
+    { icon: "information-circle", text: "Phiên bản 1.0.0", isLast: true },
   ];
 
   return (
-    <SafeAreaView style={[styles.safeArea, { backgroundColor }]}>
-      <ThemedView style={styles.container}>
+    <SafeAreaView style={[styles.safeArea, { backgroundColor: bgPrimary }]}>
+      <View style={styles.container}>
         {/* Header */}
-        <ThemedView style={styles.header}>
-          <TouchableOpacity onPress={handleTitlePress} activeOpacity={1}>
-            <ThemedText type="title" style={styles.headerTitle}>
-              Cài đặt
-            </ThemedText>
-          </TouchableOpacity>
-          <ThemedText style={[styles.headerSubtitle, { color: textSecondary }]}>
-            Tùy chỉnh trải nghiệm của bạn
-          </ThemedText>
-        </ThemedView>
+        <TouchableOpacity onPress={handleTitlePress} activeOpacity={1} style={styles.header}>
+          <PageHeader title="Tài khoản" />
+        </TouchableOpacity>
 
         <ScrollView style={styles.content} showsVerticalScrollIndicator={false}>
-          {/* Appearance Section */}
-          <ThemedView style={styles.section}>
-            <View style={styles.sectionHeader}>
-              <Ionicons name="color-palette" size={20} color={tintColor} style={styles.sectionIcon} />
-              <ThemedText style={styles.sectionTitle}>Giao diện</ThemedText>
-            </View>
-
-            <ThemedView style={[styles.card, { backgroundColor: cardColor, borderColor }]}>
-              <ThemedText style={[styles.cardLabel, { color: textSecondary }]}>Chế độ hiển thị</ThemedText>
-              <View style={styles.themeOptions}>
-                {themeModes.map((mode) => {
-                  const isActive = themeMode === mode.value;
-                  return (
-                    <TouchableOpacity
-                      key={mode.value}
-                      style={[
-                        styles.themeOption,
-                        { borderColor: borderColor, backgroundColor: backgroundSecondary },
-                        isActive && {
-                          borderColor: tintColor,
-                          backgroundColor: tintColor + "15",
-                        },
-                      ]}
-                      onPress={() => setThemeMode(mode.value)}
-                      activeOpacity={0.7}
-                    >
-                      <Ionicons
-                        name={mode.icon}
-                        size={24}
-                        color={isActive ? tintColor : textSecondary}
-                        style={styles.themeIcon}
-                      />
-                      <ThemedText
-                        style={[
-                          styles.themeOptionText,
-                          { color: textSecondary },
-                          isActive && { fontWeight: "700", color: tintColor },
-                        ]}
-                      >
-                        {mode.label}
+          {/* User Profile Card (Logged In) or Login Button (Logged Out) */}
+          <View style={styles.section}>
+            {isLoggedIn ? (
+              // ============================================
+              // WRAPPER: Avatar + Name + Email Card
+              // ============================================
+              <View
+                style={[styles.card, { backgroundColor: cardColor, borderColor: outlineSecondary }]}
+              >
+                <View style={styles.cardContent}>
+                  <View style={styles.profileContent}>
+                    <View style={styles.avatarContainer}>
+                      {userAvatar ? (
+                        <Image source={{ uri: userAvatar }} style={styles.avatar} />
+                      ) : (
+                        <View style={[styles.avatarPlaceholder, { backgroundColor: tintColor }]}>
+                          <ThemedText style={styles.avatarText}>
+                            {userName
+                              .split(" ")
+                              .map((n: string) => n[0])
+                              .join("")
+                              .toUpperCase()
+                              .slice(0, 2)}
+                          </ThemedText>
+                        </View>
+                      )}
+                    </View>
+                    <View style={styles.profileInfo}>
+                      <ThemedText style={[styles.profileName, { color: textPrimary }]}>
+                        {userName}
                       </ThemedText>
-                    </TouchableOpacity>
-                  );
-                })}
+                      <ThemedText style={[styles.profileEmail, { color: textSecondary }]}>
+                        {userEmail}
+                      </ThemedText>
+                    </View>
+                  </View>
+                </View>
               </View>
-            </ThemedView>
-          </ThemedView>
-
-          {/* Account Section */}
-          <ThemedView style={styles.section}>
-            <View style={styles.sectionHeader}>
-              <Ionicons name="person-circle" size={20} color={tintColor} style={styles.sectionIcon} />
-              <ThemedText style={styles.sectionTitle}>Tài khoản</ThemedText>
-            </View>
-
-            <ThemedView style={[styles.card, { backgroundColor: cardColor, borderColor }]}>
-              <SignOutButton />
-            </ThemedView>
-          </ThemedView>
+            ) : (
+              // ============================================
+              <View
+                style={[styles.card, { backgroundColor: cardColor, borderColor: outlineSecondary }]}
+              >
+                <View style={styles.cardContent}>
+                  <Button
+                    variant="highlight"
+                    width="fill"
+                    leadingIcon={<Ionicons name="log-in-outline" size={20} color="#FFFFFF" />}
+                    onPress={handleLoginPress}
+                  >
+                    Đăng nhập
+                  </Button>
+                </View>
+              </View>
+            )}
+          </View>
 
           {/* App Info Section */}
-          <ThemedView style={styles.section}>
+          <View style={styles.section}>
             <View style={styles.sectionHeader}>
-              <Ionicons name="information-circle" size={20} color={tintColor} style={styles.sectionIcon} />
-              <ThemedText style={styles.sectionTitle}>Về ứng dụng</ThemedText>
+              <ThemedText style={[styles.sectionTitle, { color: textPrimary }]}>
+                Về ứng dụng
+              </ThemedText>
             </View>
 
-            <ThemedView style={[styles.card, { backgroundColor: cardColor, borderColor }]}>
-              <View style={styles.infoRow}>
-                <ThemedText style={[styles.infoLabel, { color: textSecondary }]}>Phiên bản</ThemedText>
-                <ThemedText style={styles.infoValue}>1.0.0</ThemedText>
+            <View
+              style={[styles.card, { backgroundColor: cardColor, borderColor: outlineSecondary }]}
+            >
+              <View style={styles.aboutCardContent}>
+                {settingItems.map((item, index) => (
+                  <TouchableOpacity key={index} style={styles.settingItem} activeOpacity={0.7}>
+                    <View style={styles.settingItemLeft}>
+                      <Ionicons name={item.icon as any} size={24} color={fgTertiary} />
+                      <View
+                        style={[
+                          styles.settingItemContent,
+                          !item.isLast
+                            ? {
+                                borderBottomColor: outlineSecondary,
+                                borderBottomWidth: 1,
+                              }
+                            : {
+                                borderBottomWidth: 0,
+                              },
+                        ]}
+                      >
+                        <ThemedText style={[styles.settingItemText, { color: textPrimary }]}>
+                          {item.text}
+                        </ThemedText>
+                      </View>
+                    </View>
+                  </TouchableOpacity>
+                ))}
               </View>
-              <View style={[styles.divider, { backgroundColor: borderColor }]} />
-              <View style={styles.infoRow}>
-                <ThemedText style={[styles.infoLabel, { color: textSecondary }]}>Nhà phát triển</ThemedText>
-                <ThemedText style={styles.infoValue}>VokaMate Team</ThemedText>
-              </View>
-            </ThemedView>
-          </ThemedView>
-
-          {/* Support Section */}
-          <ThemedView style={styles.section}>
-            <View style={styles.sectionHeader}>
-              <Ionicons name="help-circle" size={20} color={tintColor} style={styles.sectionIcon} />
-              <ThemedText style={styles.sectionTitle}>Hỗ trợ</ThemedText>
             </View>
+          </View>
 
-            <ThemedView style={[styles.card, { backgroundColor: cardColor, borderColor }]}>
-              <TouchableOpacity style={styles.menuItem} activeOpacity={0.7}>
-                <View style={styles.menuItemLeft}>
-                  <Ionicons name="star" size={22} color={textSecondary} />
-                  <ThemedText style={styles.menuItemText}>Đánh giá ứng dụng</ThemedText>
-                </View>
-                <Ionicons name="chevron-forward" size={20} color={textSecondary} />
-              </TouchableOpacity>
-
-              <View style={[styles.divider, { backgroundColor: borderColor }]} />
-
-              <TouchableOpacity style={styles.menuItem} activeOpacity={0.7}>
-                <View style={styles.menuItemLeft}>
-                  <Ionicons name="mail" size={22} color={textSecondary} />
-                  <ThemedText style={styles.menuItemText}>Liên hệ hỗ trợ</ThemedText>
-                </View>
-                <Ionicons name="chevron-forward" size={20} color={textSecondary} />
-              </TouchableOpacity>
-
-              <View style={[styles.divider, { backgroundColor: borderColor }]} />
-
-              <TouchableOpacity style={styles.menuItem} activeOpacity={0.7}>
-                <View style={styles.menuItemLeft}>
-                  <Ionicons name="document-text" size={22} color={textSecondary} />
-                  <ThemedText style={styles.menuItemText}>Điều khoản & Chính sách</ThemedText>
-                </View>
-                <Ionicons name="chevron-forward" size={20} color={textSecondary} />
-              </TouchableOpacity>
-            </ThemedView>
-          </ThemedView>
+          {/* Sign Out Button (Logged In Only) */}
+          {isLoggedIn && (
+            <View style={[styles.section, styles.signOutSection]}>
+              <Button
+                variant="tertiary"
+                width="hug"
+                leadingIcon={<Ionicons name="log-out-outline" size={20} color={textPrimary} />}
+                onPress={handleSignOut}
+              >
+                Đăng xuất
+              </Button>
+            </View>
+          )}
 
           {/* Footer padding */}
           <View style={styles.footer} />
         </ScrollView>
-      </ThemedView>
+      </View>
     </SafeAreaView>
   );
 }
@@ -208,108 +215,102 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   header: {
-    paddingHorizontal: 24,
-    paddingTop: 20,
+    paddingTop: 6,
     paddingBottom: 16,
-  },
-  headerTitle: {
-    fontSize: 32,
-    fontWeight: "700",
-    marginBottom: 4,
-  },
-  headerSubtitle: {
-    fontSize: 15,
-    fontWeight: "400",
   },
   content: {
     flex: 1,
-    paddingHorizontal: 20,
+    paddingHorizontal: 16,
   },
   section: {
-    marginBottom: 28,
+    marginBottom: 32,
+  },
+  signOutSection: {
+    alignItems: "center",
   },
   sectionHeader: {
-    flexDirection: "row",
-    alignItems: "center",
     marginBottom: 12,
     paddingHorizontal: 4,
-  },
-  sectionIcon: {
-    marginRight: 8,
   },
   sectionTitle: {
     fontSize: 18,
     fontWeight: "600",
   },
   card: {
-    borderRadius: 16,
-    padding: 20,
+    borderRadius: 20,
     borderWidth: 1,
-    shadowColor: "#000",
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.05,
-    shadowRadius: 8,
-    elevation: 2,
   },
-  cardLabel: {
-    fontSize: 13,
-    fontWeight: "500",
-    marginBottom: 16,
-    textTransform: "uppercase",
-    letterSpacing: 0.5,
+  cardContent: {
+    padding: 16,
   },
-  themeOptions: {
+  aboutCardContent: {
+    paddingVertical: 8,
+    paddingHorizontal: 16,
+  },
+  profileContent: {
     flexDirection: "row",
-    gap: 12,
+    alignItems: "center",
+    gap: 16,
   },
-  themeOption: {
-    flex: 1,
-    paddingVertical: 16,
-    paddingHorizontal: 12,
-    borderRadius: 12,
-    borderWidth: 2,
+  avatarContainer: {
+    width: 60,
+    height: 60,
+    borderRadius: 999,
+    overflow: "hidden",
+  },
+  avatar: {
+    width: 60,
+    height: 60,
+    borderRadius: 0,
+  },
+  avatarPlaceholder: {
+    width: 60,
+    height: 60,
+    borderRadius: 30,
     alignItems: "center",
     justifyContent: "center",
   },
-  themeIcon: {
-    marginBottom: 8,
-  },
-  themeOptionText: {
-    fontSize: 13,
-    fontWeight: "500",
-  },
-  infoRow: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
-    paddingVertical: 4,
-  },
-  infoLabel: {
-    fontSize: 15,
-    fontWeight: "400",
-  },
-  infoValue: {
-    fontSize: 15,
+  avatarText: {
+    fontSize: 18,
     fontWeight: "600",
+    color: "#FFFFFF",
   },
-  divider: {
-    height: 1,
-    marginVertical: 16,
+  profileInfo: {
+    flex: 1,
+    gap: 0,
   },
-  menuItem: {
+  profileName: {
+    fontSize: 18,
+    fontWeight: "600",
+    lineHeight: 28,
+  },
+  profileEmail: {
+    fontSize: 16,
+    fontWeight: "400",
+    lineHeight: 24,
+  },
+  loginButtonContainer: {
+    paddingVertical: 16,
+  },
+  settingItem: {
     flexDirection: "row",
-    justifyContent: "space-between",
     alignItems: "center",
-    paddingVertical: 4,
   },
-  menuItemLeft: {
+  settingItemLeft: {
     flexDirection: "row",
     alignItems: "center",
     gap: 12,
+    flex: 1,
   },
-  menuItemText: {
-    fontSize: 15,
+  settingItemContent: {
+    flex: 1,
+    paddingVertical: 16,
+    borderBottomWidth: 1,
+  },
+  settingItemText: {
+    fontSize: 16,
     fontWeight: "500",
+    lineHeight: 24,
   },
   footer: {
     height: 40,

@@ -1,0 +1,31 @@
+import * as React from "react";
+import Svg, { Path } from "react-native-svg";
+
+interface BellSolidProps {
+  width?: number;
+  height?: number;
+  color?: string;
+  [key: string]: any;
+}
+
+const BellSolid = (props: BellSolidProps) => {
+  const { width = 24, height = 24, ...restProps } = props;
+
+  return (
+  <Svg
+      width={width}
+      height={height}
+      fill="none"
+      viewBox="0 0 24 24"
+      {...restProps}
+    >
+    <Path
+      fill={props.color || "#0F172B"}
+      fillRule="evenodd"
+      d="M8.604 20.338a1 1 0 0 1 1.412-.088c.53.468 1.223.75 1.984.75s1.455-.282 1.984-.75a1 1 0 1 1 1.323 1.5A4.98 4.98 0 0 1 12 23a4.98 4.98 0 0 1-3.308-1.25 1 1 0 0 1-.088-1.412M7.05 3.05A7 7 0 0 1 19 8c0 2.913.732 4.844 1.5 6.077l.011.02c.358.573.64 1.027.83 1.358.096.165.183.325.247.466.032.071.068.158.096.252.024.079.068.246.051.45-.01.136-.039.37-.173.611a1.5 1.5 0 0 1-.428.47c-.25.186-.538.229-.634.243h-.004a5 5 0 0 1-.483.04c-.336.013-.8.013-1.377.013H5.364c-.577 0-1.041 0-1.376-.013a5 5 0 0 1-.484-.04H3.5a1.4 1.4 0 0 1-.634-.242 1.5 1.5 0 0 1-.428-.47 1.5 1.5 0 0 1-.173-.613c-.017-.203.027-.37.05-.449.029-.094.065-.18.097-.251a6 6 0 0 1 .247-.467c.19-.33.472-.785.83-1.359l.012-.019C4.268 12.844 5 10.913 5 8a7 7 0 0 1 2.05-4.95"
+      clipRule="evenodd"
+    />
+  </Svg>
+  );
+};
+export default BellSolid;

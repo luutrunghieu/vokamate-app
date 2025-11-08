@@ -1,0 +1,99 @@
+{
+  "word": "abandon",
+  "phonetics": {
+    "us": "/əˈbændən/",
+    "uk": "/əˈbændən/"
+  },
+  "definitions": [
+    {
+      "word_vi": [
+        "bỏ rơi",
+        "từ bỏ"
+      ],
+      "part_of_speech": [
+        "verb"
+      ],
+      "sense_label": {
+        "en": "leave",
+        "vi": "rời bỏ"
+      },
+      "popularity": 5,
+      "definition_en": "To leave someone or something behind completely, especially when one should stay or has a responsibility to remain.",
+      "definition_vi": "Bỏ rơi hoàn toàn ai đó hoặc cái gì đó, đặc biệt khi người ta nên ở lại hoặc có trách nhiệm phải ở lại.",
+      "example_en": "He abandoned his family when they needed him most.",
+      "example_vi": "Anh ta bỏ rơi gia đình khi họ cần anh ta nhất."
+    },
+    {
+      "word_vi": [
+        "từ bỏ",
+        "bỏ cuộc"
+      ],
+      "part_of_speech": [
+        "verb"
+      ],
+      "sense_label": {
+        "en": "quit",
+        "vi": "dừng lại"
+      },
+      "popularity": 5,
+      "definition_en": "To stop doing or pursuing something, especially before completion; to give up.",
+      "definition_vi": "Ngừng làm hoặc theo đuổi điều gì đó, đặc biệt là trước khi hoàn thành; đầu hàng.",
+      "example_en": "They abandoned the project due to lack of funds.",
+      "example_vi": "Họ từ bỏ dự án vì thiếu kinh phí."
+    },
+    {
+      "word_vi": [
+        "buông thả",
+        "để mặc"
+      ],
+      "part_of_speech": [
+        "verb"
+      ],
+      "sense_label": {
+        "en": "emotion",
+        "vi": "cảm xúc"
+      },
+      "popularity": 4,
+      "definition_en": "To surrender oneself completely to an emotion or impulse without restraint.",
+      "definition_vi": "Dâng hiến bản thân hoàn toàn cho một cảm xúc hoặc sự thôi thúc mà không kiềm chế.",
+      "example_en": "She abandoned herself to grief after the loss.",
+      "example_vi": "Cô ấy buông mình vào nỗi buồn sau mất mát."
+    },
+    {
+      "word_vi": [
+        "sự phóng khoáng",
+        "sự tự do"
+      ],
+      "part_of_speech": [
+        "noun"
+      ],
+      "sense_label": {
+        "en": "freedom",
+        "vi": "tự do"
+      },
+      "popularity": 3,
+      "definition_en": "Complete lack of inhibition or restraint; wild freedom of manner or action.",
+      "definition_vi": "Sự thiếu ức chế hoặc kiềm chế hoàn toàn; sự tự do phóng túng trong cách cư xử hoặc hành động.",
+      "example_en": "The dancers moved with joyful abandon.",
+      "example_vi": "Các vũ công chuyển động với sự phóng khoáng vui vẻ."
+    },
+    {
+      "word_vi": [
+        "từ bỏ quyền",
+        "khước từ"
+      ],
+      "part_of_speech": [
+        "verb"
+      ],
+      "sense_label": {
+        "en": "rights",
+        "vi": "quyền lợi"
+      },
+      "popularity": 2,
+      "definition_en": "To renounce or relinquish a legal right, claim, or interest.",
+      "definition_vi": "Từ bỏ hoặc nhượng lại một quyền pháp lý, yêu cầu, hoặc quyền lợi.",
+      "example_en": "He abandoned his claim to the inheritance.",
+      "example_vi": "Anh ta từ bỏ quyền thừa kế của mình."
+    }
+  ]
+}

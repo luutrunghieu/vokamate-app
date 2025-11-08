@@ -20,7 +20,16 @@ const MAPPING = {
   "chevron.right": "chevron-right",
   "character.book.closed.fill": "book",
   "book.fill": "book",
+  bookmark: "bookmark-outline",
+  "bookmark.fill": "bookmark",
   gear: "settings",
+  "clock.rewind": "history",
+  "arrow.right": "arrow-forward",
+  "slider.horizontal.3": "tune",
+  "speaker.wave.2.fill": "volume-up",
+  checkmark: "check",
+  "plus-circle": "add-circle",
+  settings: "settings",
 } as IconMapping;
 
 /**
@@ -40,5 +49,12 @@ export function IconSymbol({
   style?: StyleProp<TextStyle>;
   weight?: SymbolWeight;
 }) {
-  return <MaterialIcons color={color} size={size} name={MAPPING[name]} style={style} />;
+  return (
+    <MaterialIcons
+      color={color}
+      size={size}
+      name={MAPPING[name]}
+      style={[{ width: size, height: size }, style]}
+    />
+  );
 }

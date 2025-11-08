@@ -1,142 +1,132 @@
 import { ThemedText } from "@/components/themed-text";
-import { IconSymbol } from "@/components/ui/icon-symbol";
+import { Button } from "@/components/ui/button";
+import { tailwindColors } from "@/constants/tailwind-colors";
 import { useThemeColor } from "@/hooks/use-theme-color";
+import { BookmarkSolid } from "@/src/components/Icons";
 import { Definition } from "@/types/translation";
-import { StyleSheet, TouchableOpacity, View } from "react-native";
+import { StyleSheet, View } from "react-native";
 
 interface DefinitionItemProps {
   definition: Definition;
   index: number;
   onSave: (definitionId: string) => void;
+  isLast?: boolean;
 }
 
-export function DefinitionItem({ definition, index, onSave }: DefinitionItemProps) {
-  const borderColor = useThemeColor({}, "border");
-  const bgSecondary = useThemeColor({}, "backgroundSecondary");
+// Helper function to get part of speech color
+function getPartOfSpeechColor(partOfSpeech: string): string {
+  const pos = partOfSpeech.toLowerCase().trim();
+
+  // Map Vietnamese part of speech to Tailwind colors
+  if (pos === "danh từ" || pos === "noun") {
+    return tailwindColors.sky[500];
+  }
+  if (pos === "động từ" || pos === "verb") {
+    return tailwindColors.orange[500];
+  }
+  if (pos === "cụm động từ" || pos === "phrasal verb") {
+    return tailwindColors.orange[500];
+  }
+  if (pos === "tính từ" || pos === "adjective") {
+    return tailwindColors.indigo[500];
+  }
+  if (pos === "trạng từ" || pos === "adverb") {
+    return tailwindColors.teal[500];
+  }
+  if (pos === "thành ngữ" || pos === "idiom") {
+    return tailwindColors.pink[500];
+  }
+  if (
+    pos === "đại từ" ||
+    pos === "pronoun" ||
+    pos === "giới từ" ||
+    pos === "preposition" ||
+    pos === "liên từ" ||
+    pos === "conjunction" ||
+    pos === "từ hạn định" ||
+    pos === "determiner"
+  ) {
+    return tailwindColors.sky[500];
+  }
+  if (pos === "thán từ" || pos === "interjection" || pos === "mạo từ") {
+    return tailwindColors.slate[500];
+  }
+
+  // Default gray for undefined part of speech
+  return tailwindColors.gray[400];
+}
+
+export function DefinitionItem({ definition, index, onSave, isLast }: DefinitionItemProps) {
+  const borderColor = useThemeColor({}, "outlineSecondary");
   const textSecondary = useThemeColor({}, "textSecondary");
-  const tintColor = useThemeColor({}, "tint");
-  const successColor = useThemeColor({}, "success");
-  const iconColor = useThemeColor({}, "icon");
+  const textPrimary = useThemeColor({}, "textPrimary");
+  const partOfSpeechColor = getPartOfSpeechColor(definition.wordType);
 
   return (
-    <View style={[styles.container, { borderBottomColor: borderColor }]}>
-      <View style={styles.header}>
-        <View style={[styles.numberContainer, { backgroundColor: bgSecondary }]}>
-          <ThemedText style={[styles.number, { color: textSecondary }]}>{index + 1}</ThemedText>
-        </View>
-        <View style={styles.titleContainer}>
-          <ThemedText style={[styles.word, { color: tintColor }]}>{definition.word}</ThemedText>
-          <ThemedText style={[styles.type, { backgroundColor: bgSecondary, color: textSecondary }]}>
-            {definition.wordType}
+    <View
+      style={[
+        styles.container,
+        { borderBottomColor: borderColor, borderBottomWidth: isLast ? 0 : 1 },
+      ]}
+    >
+      <View style={styles.contentRow}>
+        <View style={styles.textContent}>
+          <View style={styles.titleRow}>
+            <ThemedText style={[styles.vietnameseTranslations, { color: textPrimary }]}>
+              {definition.word}
+            </ThemedText>
+            <ThemedText style={[styles.partOfSpeech, { color: partOfSpeechColor }]}>
+              {definition.wordType}
+            </ThemedText>
+          </View>
+          <ThemedText style={[styles.definition, { color: textSecondary }]}>
+            {definition.meaning}
           </ThemedText>
         </View>
-      </View>
-
-      <ThemedText style={styles.meaning}>{definition.meaning}</ThemedText>
-
-      {definition.examples.length > 0 && (
-        <View style={styles.examplesContainer}>
-          {definition.examples.map((example, idx) => (
-            <ThemedText key={idx} style={[styles.exampleText, { color: textSecondary }]}>
-              {example}
-            </ThemedText>
-          ))}
-        </View>
-      )}
-
-      <TouchableOpacity
-        style={[
-          styles.saveButton,
-          { backgroundColor: bgSecondary },
-          definition.saved && { backgroundColor: successColor + "20" },
-        ]}
-        onPress={() => onSave(definition.id)}
-        disabled={definition.saved}
-      >
-        <IconSymbol
-          name={definition.saved ? "bookmark.fill" : "bookmark"}
-          size={16}
-          color={definition.saved ? successColor : iconColor}
-        />
-        <ThemedText
-          style={[styles.saveButtonText, { color: textSecondary }, definition.saved && { color: successColor }]}
+        <Button
+          variant="tertiary"
+          width="hug"
+          leadingIcon={<BookmarkSolid width={20} height={20} color={textPrimary} />}
+          onPress={() => onSave(definition.id)}
+          disabled={definition.saved}
         >
-          {definition.saved ? "Đã lưu" : "Lưu từ này"}
-        </ThemedText>
-      </TouchableOpacity>
+          Lưu
+        </Button>
+      </View>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    marginBottom: 28,
-    paddingBottom: 24,
-    borderBottomWidth: 1,
+    paddingVertical: 16,
   },
-  header: {
+  contentRow: {
     flexDirection: "row",
-    alignItems: "center",
-    marginBottom: 14,
-    gap: 12,
-  },
-  numberContainer: {
-    width: 32,
-    height: 32,
-    borderRadius: 16,
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  number: {
-    fontSize: 16,
-    fontWeight: "700",
-  },
-  titleContainer: {
-    flex: 1,
-    flexDirection: "row",
-    alignItems: "center",
-    gap: 10,
-    flexWrap: "wrap",
-  },
-  word: {
-    fontSize: 19,
-    fontWeight: "600",
-  },
-  type: {
-    fontSize: 12,
-    fontWeight: "600",
-    paddingHorizontal: 10,
-    paddingVertical: 4,
-    borderRadius: 12,
-    overflow: "hidden",
-  },
-  meaning: {
-    fontSize: 16,
-    lineHeight: 24,
-    marginBottom: 14,
-    paddingLeft: 40,
-  },
-  examplesContainer: {
-    paddingLeft: 40,
-    marginBottom: 16,
-    gap: 10,
-  },
-  exampleText: {
-    fontSize: 15,
-    lineHeight: 22,
-  },
-  saveButton: {
-    flexDirection: "row",
-    alignItems: "center",
-    alignSelf: "flex-start",
-    paddingHorizontal: 18,
-    paddingVertical: 10,
-    borderRadius: 20,
     gap: 8,
-    marginLeft: 40,
+    alignItems: "flex-start",
   },
-  saveButtonText: {
+  textContent: {
+    flex: 1,
+    gap: 10,
+  },
+  titleRow: {
+    flexDirection: "column",
+    gap: 2,
+  },
+  vietnameseTranslations: {
+    fontSize: 18,
+    fontWeight: "600",
+    lineHeight: 28,
+  },
+  partOfSpeech: {
     fontSize: 14,
     fontWeight: "500",
+    lineHeight: 20,
+  },
+  definition: {
+    fontSize: 14,
+    fontWeight: "400",
+    lineHeight: 20,
   },
 });

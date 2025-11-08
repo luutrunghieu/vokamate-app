@@ -1,0 +1,102 @@
+{
+  "word": "abortion",
+  "phonetics": {
+    "us": "/əˈbɔrʃən/",
+    "uk": "/əˈbɔːʃən/"
+  },
+  "definitions": [
+    {
+      "word_vi": [
+        "phá thai",
+        "nạo thai",
+        "đình chỉ thai kỳ"
+      ],
+      "part_of_speech": [
+        "noun"
+      ],
+      "sense_label": {
+        "en": "pregnancy",
+        "vi": "thai kỳ"
+      },
+      "popularity": 5,
+      "definition_en": "The deliberate termination of a human pregnancy, most often performed during the first 28 weeks of pregnancy.",
+      "definition_vi": "Sự chấm dứt có chủ ý của thai kỳ ở người, thường được thực hiện trong 28 tuần đầu của thai kỳ.",
+      "example_en": "She decided to have an abortion after consulting with her doctor.",
+      "example_vi": "Cô ấy quyết định phá thai sau khi tư vấn với bác sĩ."
+    },
+    {
+      "word_vi": [
+        "sẩy thai",
+        "sảy thai tự nhiên"
+      ],
+      "part_of_speech": [
+        "noun"
+      ],
+      "sense_label": {
+        "en": "miscarriage",
+        "vi": "sảy thai"
+      },
+      "popularity": 4,
+      "definition_en": "The spontaneous expulsion of a fetus from the womb before it is able to survive independently; a miscarriage.",
+      "definition_vi": "Sự đẩy thai nhi ra khỏi tử cung một cách tự nhiên trước khi nó có thể sống sót độc lập; sảy thai.",
+      "example_en": "She suffered an abortion in her second trimester.",
+      "example_vi": "Cô ấy bị sẩy thai trong tam cá nguyệt thứ hai."
+    },
+    {
+      "word_vi": [
+        "sự thất bại",
+        "sản phẩm hỏng",
+        "điều tồi tệ"
+      ],
+      "part_of_speech": [
+        "noun"
+      ],
+      "sense_label": {
+        "en": "failure",
+        "vi": "thất bại"
+      },
+      "popularity": 3,
+      "definition_en": "An object or undertaking that is badly made, unsuccessful, or fails to develop properly.",
+      "definition_vi": "Một vật thể hoặc công việc được làm tồi tệ, không thành công hoặc không phát triển đúng cách.",
+      "example_en": "The project turned out to be an abortion of the original plan.",
+      "example_vi": "Dự án hóa ra là một sự thất bại của kế hoạch ban đầu."
+    },
+    {
+      "word_vi": [
+        "sự ngừng phát triển",
+        "sự teo lại"
+      ],
+      "part_of_speech": [
+        "noun"
+      ],
+      "sense_label": {
+        "en": "development",
+        "vi": "phát triển"
+      },
+      "popularity": 2,
+      "definition_en": "The arrest of development of an organ or part, especially in biology.",
+      "definition_vi": "Sự ngừng phát triển của một cơ quan hoặc bộ phận, đặc biệt trong sinh học.",
+      "example_en": "The abortion of the embryo's limb development was noted early.",
+      "example_vi": "Sự ngừng phát triển chi của phôi thai đã được ghi nhận sớm."
+    },
+    {
+      "word_vi": [
+        "sự hủy bỏ",
+        "sự chấm dứt",
+        "sự dừng lại"
+      ],
+      "part_of_speech": [
+        "noun"
+      ],
+      "sense_label": {
+        "en": "termination",
+        "vi": "chấm dứt"
+      },
+      "popularity": 1,
+      "definition_en": "The act of terminating a plan, project, or procedure before completion.",
+      "definition_vi": "Hành động chấm dứt một kế hoạch, dự án hoặc quy trình trước khi hoàn thành.",
+      "example_en": "The abortion of the mission was ordered due to safety concerns.",
+      "example_vi": "Việc hủy bỏ nhiệm vụ được ra lệnh do lo ngại về an toàn."
+    }
+  ]
+}

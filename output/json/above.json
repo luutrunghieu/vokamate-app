@@ -1,0 +1,153 @@
+{
+  "word": "above",
+  "phonetics": {
+    "us": "/əˈbʌv/",
+    "uk": "/əˈbʌv/"
+  },
+  "definitions": [
+    {
+      "word_vi": [
+        "trên",
+        "phía trên"
+      ],
+      "part_of_speech": [
+        "preposition"
+      ],
+      "sense_label": {
+        "en": "position",
+        "vi": "vị trí"
+      },
+      "popularity": 5,
+      "definition_en": "At a higher level or position than; over.",
+      "definition_vi": "Ở mức độ hoặc vị trí cao hơn; phía trên.",
+      "example_en": "The bird flew above the trees.",
+      "example_vi": "Con chim bay trên những tán cây."
+    },
+    {
+      "word_vi": [
+        "hơn",
+        "trên"
+      ],
+      "part_of_speech": [
+        "preposition"
+      ],
+      "sense_label": {
+        "en": "quantity",
+        "vi": "số lượng"
+      },
+      "popularity": 5,
+      "definition_en": "More than in quantity, degree, or measure.",
+      "definition_vi": "Nhiều hơn về số lượng, mức độ hoặc đo lường.",
+      "example_en": "Temperatures above 30 degrees are common here.",
+      "example_vi": "Nhiệt độ trên 30 độ rất phổ biến ở đây."
+    },
+    {
+      "word_vi": [
+        "ở trên",
+        "phía trên"
+      ],
+      "part_of_speech": [
+        "adverb"
+      ],
+      "sense_label": {
+        "en": "place",
+        "vi": "nơi chốn"
+      },
+      "popularity": 5,
+      "definition_en": "In or to a higher place; overhead.",
+      "definition_vi": "Ở hoặc đến một nơi cao hơn; phía trên đầu.",
+      "example_en": "Look at the clouds above.",
+      "example_vi": "Hãy nhìn những đám mây ở trên."
+    },
+    {
+      "word_vi": [
+        "cao hơn",
+        "trên"
+      ],
+      "part_of_speech": [
+        "preposition"
+      ],
+      "sense_label": {
+        "en": "rank",
+        "vi": "cấp bậc"
+      },
+      "popularity": 4,
+      "definition_en": "Higher in rank, status, or authority than.",
+      "definition_vi": "Cao hơn về cấp bậc, địa vị hoặc quyền lực.",
+      "example_en": "She is above me in the company hierarchy.",
+      "example_vi": "Cô ấy cao hơn tôi trong hệ thống cấp bậc công ty."
+    },
+    {
+      "word_vi": [
+        "ở trên",
+        "nói trên"
+      ],
+      "part_of_speech": [
+        "adjective"
+      ],
+      "sense_label": {
+        "en": "text",
+        "vi": "văn bản"
+      },
+      "popularity": 4,
+      "definition_en": "Mentioned or written earlier in a text or document.",
+      "definition_vi": "Được đề cập hoặc viết trước đó trong văn bản hoặc tài liệu.",
+      "example_en": "Please refer to the above information.",
+      "example_vi": "Vui lòng tham khảo thông tin nói trên."
+    },
+    {
+      "word_vi": [
+        "ở phía trên",
+        "ở trên"
+      ],
+      "part_of_speech": [
+        "adverb"
+      ],
+      "sense_label": {
+        "en": "document",
+        "vi": "tài liệu"
+      },
+      "popularity": 4,
+      "definition_en": "At an earlier point in a text or document.",
+      "definition_vi": "Ở một điểm trước đó trong văn bản hoặc tài liệu.",
+      "example_en": "As mentioned above, we need more time.",
+      "example_vi": "Như đã đề cập ở trên, chúng ta cần thêm thời gian."
+    },
+    {
+      "word_vi": [
+        "phần trên",
+        "nội dung trên"
+      ],
+      "part_of_speech": [
+        "noun"
+      ],
+      "sense_label": {
+        "en": "reference",
+        "vi": "tham chiếu"
+      },
+      "popularity": 3,
+      "definition_en": "Something that is written or mentioned earlier in a text.",
+      "definition_vi": "Cái gì đó được viết hoặc đề cập trước đó trong văn bản.",
+      "example_en": "The above clearly shows the results.",
+      "example_vi": "Phần trên cho thấy rõ ràng kết quả."
+    },
+    {
+      "word_vi": [
+        "vượt quá",
+        "cao hơn"
+      ],
+      "part_of_speech": [
+        "preposition"
+      ],
+      "sense_label": {
+        "en": "morality",
+        "vi": "đạo đức"
+      },
+      "popularity": 2,
+      "definition_en": "Too good or moral for; beyond the scope of.",
+      "definition_vi": "Quá tốt hoặc có đạo đức để làm; vượt ra ngoài phạm vi của.",
+      "example_en": "He thinks he is above such petty behavior.",
+      "example_vi": "Anh ấy nghĩ mình cao hơn những hành vi tầm thường như vậy."
+    }
+  ]
+}

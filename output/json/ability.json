@@ -1,0 +1,82 @@
+{
+  "word": "ability",
+  "phonetics": {
+    "us": "/əˈbɪləti/",
+    "uk": "/əˈbɪləti/"
+  },
+  "definitions": [
+    {
+      "word_vi": [
+        "khả năng",
+        "năng lực"
+      ],
+      "part_of_speech": [
+        "noun"
+      ],
+      "sense_label": {
+        "en": "capacity",
+        "vi": "khả năng"
+      },
+      "popularity": 5,
+      "definition_en": "The capacity or power to do something physical or mental.",
+      "definition_vi": "Khả năng hoặc sức mạnh để làm điều gì đó về thể chất hoặc tinh thần.",
+      "example_en": "She has the ability to solve complex problems.",
+      "example_vi": "Cô ấy có khả năng giải quyết các vấn đề phức tạp."
+    },
+    {
+      "word_vi": [
+        "tài năng",
+        "kỹ năng",
+        "năng khiếu"
+      ],
+      "part_of_speech": [
+        "noun"
+      ],
+      "sense_label": {
+        "en": "talent",
+        "vi": "tài năng"
+      },
+      "popularity": 5,
+      "definition_en": "A particular talent, skill, or competence in a specific area.",
+      "definition_vi": "Một tài năng, kỹ năng hoặc năng lực cụ thể trong một lĩnh vực nhất định.",
+      "example_en": "He has a natural ability for music.",
+      "example_vi": "Anh ấy có tài năng bẩm sinh về âm nhạc."
+    },
+    {
+      "word_vi": [
+        "thẩm quyền",
+        "quyền hạn"
+      ],
+      "part_of_speech": [
+        "noun"
+      ],
+      "sense_label": {
+        "en": "authority",
+        "vi": "thẩm quyền"
+      },
+      "popularity": 3,
+      "definition_en": "The legal or official power to act or make decisions.",
+      "definition_vi": "Quyền hạn pháp lý hoặc chính thức để hành động hoặc đưa ra quyết định.",
+      "example_en": "The manager has the ability to approve expenses.",
+      "example_vi": "Người quản lý có thẩm quyền phê duyệt chi phí."
+    },
+    {
+      "word_vi": [
+        "khả năng thực hiện",
+        "năng lực tiềm năng"
+      ],
+      "part_of_speech": [
+        "noun"
+      ],
+      "sense_label": {
+        "en": "potential",
+        "vi": "tiềm năng"
+      },
+      "popularity": 2,
+      "definition_en": "The quality of being able to perform well; capability measured as potential rather than actual performance.",
+      "definition_vi": "Phẩm chất có thể thực hiện tốt; năng lực được đo bằng tiềm năng hơn là hiệu suất thực tế.",
+      "example_en": "The test measures your ability to learn new skills.",
+      "example_vi": "Bài kiểm tra đo lường khả năng học kỹ năng mới của bạn."
+    }
+  ]
+}

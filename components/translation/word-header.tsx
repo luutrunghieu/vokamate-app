@@ -5,35 +5,52 @@ import { StyleSheet, TouchableOpacity, View } from "react-native";
 
 interface WordHeaderProps {
   word: string;
-  pronunciation?: string;
+  pronunciation?: {
+    us?: string;
+    uk?: string;
+  };
   onPlayPronunciation?: (accent: "us" | "uk") => void;
 }
 
 export function WordHeader({ word, pronunciation, onPlayPronunciation }: WordHeaderProps) {
-  const borderColor = useThemeColor({}, "border");
   const textSecondary = useThemeColor({}, "textSecondary");
-  const iconColor = useThemeColor({}, "icon");
+  const textPrimary = useThemeColor({}, "textPrimary");
+  const iconColor = useThemeColor({}, "fgPrimary");
 
   return (
-    <View style={[styles.container, { borderBottomColor: borderColor }]}>
+    <View style={styles.container}>
       <View style={styles.wordContainer}>
-        <ThemedText type="title" style={styles.word}>
-          {word}
-        </ThemedText>
-        {pronunciation && (
-          <ThemedText style={[styles.pronunciation, { color: textSecondary }]}>{pronunciation}</ThemedText>
-        )}
-      </View>
-
-      <View style={styles.audioButtons}>
-        <TouchableOpacity style={styles.speakerButton} onPress={() => onPlayPronunciation?.("us")}>
-          <IconSymbol name="speaker.wave.2.fill" size={18} color={iconColor} />
-          <ThemedText style={styles.flag}>US</ThemedText>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.speakerButton} onPress={() => onPlayPronunciation?.("uk")}>
-          <IconSymbol name="speaker.wave.2.fill" size={18} color={iconColor} />
-          <ThemedText style={styles.flag}>UK</ThemedText>
-        </TouchableOpacity>
+        <ThemedText style={[styles.word, { color: textPrimary }]}>{word}</ThemedText>
+        <View style={styles.pronunciationRow}>
+          {pronunciation?.us && (
+            <View style={styles.pronunciationGroup}>
+              <TouchableOpacity
+                style={styles.audioButton}
+                onPress={() => onPlayPronunciation?.("us")}
+              >
+                <IconSymbol name="speaker.wave.2.fill" size={20} color={iconColor} />
+                <ThemedText style={[styles.flag, { color: textPrimary }]}>US</ThemedText>
+              </TouchableOpacity>
+              <ThemedText style={[styles.pronunciation, { color: textSecondary }]}>
+                {pronunciation.us}
+              </ThemedText>
+            </View>
+          )}
+          {pronunciation?.uk && (
+            <View style={styles.pronunciationGroup}>
+              <TouchableOpacity
+                style={styles.audioButton}
+                onPress={() => onPlayPronunciation?.("uk")}
+              >
+                <IconSymbol name="speaker.wave.2.fill" size={20} color={iconColor} />
+                <ThemedText style={[styles.flag, { color: textPrimary }]}>UK</ThemedText>
+              </TouchableOpacity>
+              <ThemedText style={[styles.pronunciation, { color: textSecondary }]}>
+                {pronunciation.uk}
+              </ThemedText>
+            </View>
+          )}
+        </View>
       </View>
     </View>
   );
@@ -41,31 +58,45 @@ export function WordHeader({ word, pronunciation, onPlayPronunciation }: WordHea
 
 const styles = StyleSheet.create({
   container: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
-    marginBottom: 16,
-    paddingBottom: 16,
-    borderBottomWidth: 1,
+    flexDirection: "column",
+    gap: 4,
+    paddingBottom: 0,
   },
   wordContainer: {
     flexDirection: "column",
+    gap: 4,
   },
   word: {
     fontSize: 24,
-    marginBottom: 8,
+    fontWeight: "600",
+    lineHeight: 32,
   },
-  pronunciation: {},
-  audioButtons: {
+  pronunciationRow: {
     flexDirection: "row",
-    gap: 12,
+    flexWrap: "wrap",
+    gap: 16,
+    alignItems: "center",
   },
-  speakerButton: {
+  pronunciationGroup: {
     flexDirection: "row",
     alignItems: "center",
     gap: 4,
   },
+  audioButton: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 4,
+    height: 36,
+    justifyContent: "center",
+  },
   flag: {
-    fontSize: 16,
+    fontSize: 14,
+    fontWeight: "500",
+    lineHeight: 20,
+  },
+  pronunciation: {
+    fontSize: 14,
+    fontWeight: "400",
+    lineHeight: 20,
   },
 });

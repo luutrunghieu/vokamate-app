@@ -17,17 +17,21 @@ export function SuggestionsList({ suggestions, onSelectSuggestion }: Suggestions
   }
 
   return (
-    <ThemedView style={styles.container}>
+    <ThemedView style={styles.container} lightColor="transparent" darkColor="transparent">
       <FlatList
         data={suggestions}
         keyExtractor={(item, index) => `${item}-${index}`}
         renderItem={({ item }) => (
           <TouchableOpacity style={styles.suggestionItem} onPress={() => onSelectSuggestion(item)}>
-            <ThemedText style={[styles.suggestionText, { color: textSecondary }]}>{item}</ThemedText>
+            <ThemedText style={[styles.suggestionText, { color: textSecondary }]}>
+              {item}
+            </ThemedText>
             <ThemedText style={[styles.arrow, { color: borderColor }]}>→</ThemedText>
           </TouchableOpacity>
         )}
-        ItemSeparatorComponent={() => <ThemedView style={[styles.separator, { backgroundColor: borderColor }]} />}
+        ItemSeparatorComponent={() => (
+          <ThemedView style={[styles.separator, { backgroundColor: borderColor }]} />
+        )}
       />
     </ThemedView>
   );

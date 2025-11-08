@@ -1,0 +1,154 @@
+{
+  "word": "about",
+  "phonetics": {
+    "us": "/əˈbaʊt/",
+    "uk": "/əˈbaʊt/"
+  },
+  "definitions": [
+    {
+      "word_vi": [
+        "về",
+        "liên quan đến"
+      ],
+      "part_of_speech": [
+        "preposition"
+      ],
+      "sense_label": {
+        "en": "topic",
+        "vi": "chủ đề"
+      },
+      "popularity": 5,
+      "definition_en": "Concerning or relating to a particular subject or topic.",
+      "definition_vi": "Liên quan hoặc có quan hệ đến một chủ đề hoặc đề tài cụ thể.",
+      "example_en": "We talked about the weather.",
+      "example_vi": "Chúng tôi nói chuyện về thời tiết."
+    },
+    {
+      "word_vi": [
+        "khoảng",
+        "xấp xỉ"
+      ],
+      "part_of_speech": [
+        "adverb"
+      ],
+      "sense_label": {
+        "en": "quantity",
+        "vi": "số lượng"
+      },
+      "popularity": 5,
+      "definition_en": "Approximately or nearly (used with numbers or quantities).",
+      "definition_vi": "Xấp xỉ hoặc gần đúng (dùng với số hoặc số lượng).",
+      "example_en": "It costs about ten dollars.",
+      "example_vi": "Nó có giá khoảng mười đô la."
+    },
+    {
+      "word_vi": [
+        "ở",
+        "quanh",
+        "gần"
+      ],
+      "part_of_speech": [
+        "preposition"
+      ],
+      "sense_label": {
+        "en": "location",
+        "vi": "vị trí"
+      },
+      "popularity": 4,
+      "definition_en": "Located in or around a particular place.",
+      "definition_vi": "Nằm ở hoặc xung quanh một địa điểm cụ thể.",
+      "example_en": "There are shops about the city.",
+      "example_vi": "Có các cửa hàng quanh thành phố."
+    },
+    {
+      "word_vi": [
+        "quay lại",
+        "đảo ngược"
+      ],
+      "part_of_speech": [
+        "adverb"
+      ],
+      "sense_label": {
+        "en": "direction",
+        "vi": "hướng"
+      },
+      "popularity": 4,
+      "definition_en": "In the opposite direction or facing the other way.",
+      "definition_vi": "Theo hướng ngược lại hoặc quay mặt về phía khác.",
+      "example_en": "He turned about and walked away.",
+      "example_vi": "Anh ấy quay lại và bước đi."
+    },
+    {
+      "word_vi": [
+        "đang làm",
+        "bận rộn với"
+      ],
+      "part_of_speech": [
+        "preposition"
+      ],
+      "sense_label": {
+        "en": "activity",
+        "vi": "hoạt động"
+      },
+      "popularity": 3,
+      "definition_en": "Engaged in or occupied with an activity.",
+      "definition_vi": "Tham gia hoặc bận rộn với một hoạt động.",
+      "example_en": "What are you about today?",
+      "example_vi": "Hôm nay bạn đang làm gì?"
+    },
+    {
+      "word_vi": [
+        "có mặt",
+        "đang ở đây"
+      ],
+      "part_of_speech": [
+        "adjective"
+      ],
+      "sense_label": {
+        "en": "presence",
+        "vi": "sự hiện diện"
+      },
+      "popularity": 3,
+      "definition_en": "Present or moving around in a place (used predicatively, as in \"people are about\").",
+      "definition_vi": "Có mặt hoặc di chuyển quanh một nơi (được dùng như vị ngữ, ví dụ \"mọi người đang ở đây\").",
+      "example_en": "Is anyone about?",
+      "example_vi": "Có ai ở đây không?"
+    },
+    {
+      "word_vi": [
+        "đây đó",
+        "khắp nơi"
+      ],
+      "part_of_speech": [
+        "adverb"
+      ],
+      "sense_label": {
+        "en": "places",
+        "vi": "các nơi"
+      },
+      "popularity": 2,
+      "definition_en": "Here and there in various directions or places.",
+      "definition_vi": "Đây đó trong nhiều hướng hoặc nhiều nơi khác nhau.",
+      "example_en": "Papers were scattered about.",
+      "example_vi": "Giấy tờ bị rải rác khắp nơi."
+    },
+    {
+      "word_vi": [
+        "về",
+        "liên quan tới"
+      ],
+      "part_of_speech": [
+        "preposition"
+      ],
+      "sense_label": {
+        "en": "subject",
+        "vi": "vấn đề"
+      },
+      "popularity": 2,
+      "definition_en": "On the subject of or connected with.",
+      "definition_vi": "Về vấn đề hoặc có liên quan đến.",
+      "example_en": "A book about history.",
+      "example_vi": "Một cuốn sách về lịch sử."
+    }
+  ]
+}

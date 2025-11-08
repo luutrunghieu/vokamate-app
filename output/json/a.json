@@ -1,0 +1,26 @@
+{
+  "word": "a",
+  "phonetics": {
+    "us": "/ə/, /eɪ/",
+    "uk": "/ə/, /eɪ/"
+  },
+  "definitions": [
+    {
+      "word_vi": [
+        "một"
+      ],
+      "part_of_speech": [
+        "determiner"
+      ],
+      "sense_label": {
+        "en": "single",
+        "vi": "đơn lẻ"
+      },
+      "popularity": 5,
+      "definition_en": "Used before singular countable nouns to indicate one unspecified person or thing, or before noun phrases beginning with a consonant sound.",
+      "definition_vi": "Dùng trước danh từ đếm được số ít để chỉ một người hoặc vật không xác định, hoặc trước cụm danh từ bắt đầu bằng phụ âm.",
+      "example_en": "I saw a dog in the park.",
+      "example_vi": "Tôi thấy một con chó trong công viên."
+    }
+  ]
+}

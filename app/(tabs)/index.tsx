@@ -3,10 +3,12 @@ import { ThemedView } from "@/components/themed-view";
 import { useAuthContext } from "@/hooks/use-auth-context";
 import { useThemeColor } from "@/hooks/use-theme-color";
 import { Ionicons } from "@expo/vector-icons";
+import { Redirect } from "expo-router";
 import { ScrollView, StyleSheet, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function HomeScreen() {
+  return <Redirect href="/(tabs)/translate" />;
   const { session, profile } = useAuthContext();
   const backgroundColor = useThemeColor({}, "background");
   const cardColor = useThemeColor({}, "card");
@@ -20,9 +22,9 @@ export default function HomeScreen() {
 
   const getGreeting = () => {
     const hour = new Date().getHours();
-    if (hour < 12) return "Chào buổi sáng";
-    if (hour < 18) return "Chào buổi chiều";
-    return "Chào buổi tối";
+    if (hour < 12) return "Hi";
+    if (hour < 18) return "Hi";
+    return "Hi";
   };
 
   // Get user's display name from profile or session
@@ -89,12 +91,17 @@ export default function HomeScreen() {
         {/* Stats Grid */}
         <View style={styles.statsGrid}>
           {stats.map((stat, index) => (
-            <ThemedView key={index} style={[styles.statCard, { backgroundColor: cardColor, borderColor }]}>
+            <ThemedView
+              key={index}
+              style={[styles.statCard, { backgroundColor: cardColor, borderColor }]}
+            >
               <View style={[styles.statIconContainer, { backgroundColor: stat.color + "15" }]}>
                 <Ionicons name={stat.icon as any} size={24} color={stat.color} />
               </View>
               <ThemedText style={styles.statValue}>{stat.value}</ThemedText>
-              <ThemedText style={[styles.statLabel, { color: textSecondary }]}>{stat.label}</ThemedText>
+              <ThemedText style={[styles.statLabel, { color: textSecondary }]}>
+                {stat.label}
+              </ThemedText>
             </ThemedView>
           ))}
         </View>
@@ -106,7 +113,9 @@ export default function HomeScreen() {
             <View style={styles.chartContainer}>
               {weeklyData.map((day, index) => (
                 <View key={index} style={styles.chartBar}>
-                  <ThemedText style={[styles.chartValue, { color: textSecondary }]}>{day.label}</ThemedText>
+                  <ThemedText style={[styles.chartValue, { color: textSecondary }]}>
+                    {day.label}
+                  </ThemedText>
                   <View style={styles.barContainer}>
                     <View
                       style={[
@@ -133,7 +142,9 @@ export default function HomeScreen() {
             </View>
             <View style={[styles.chartLegend, { borderTopColor: borderColor }]}>
               <Ionicons name="trending-up" size={16} color={successColor} />
-              <ThemedText style={[styles.legendText, { color: textSecondary }]}>Tăng 23% so với tuần trước</ThemedText>
+              <ThemedText style={[styles.legendText, { color: textSecondary }]}>
+                Tăng 23% so với tuần trước
+              </ThemedText>
             </View>
           </ThemedView>
         </ThemedView>
@@ -149,7 +160,11 @@ export default function HomeScreen() {
                   <View
                     style={[
                       styles.activityIcon,
-                      { backgroundColor: activity.correct ? successColor + "15" : warningColor + "15" },
+                      {
+                        backgroundColor: activity.correct
+                          ? successColor + "15"
+                          : warningColor + "15",
+                      },
                     ]}
                   >
                     <Ionicons
@@ -164,7 +179,9 @@ export default function HomeScreen() {
                       {activity.translation}
                     </ThemedText>
                   </View>
-                  <ThemedText style={[styles.activityTime, { color: textSecondary }]}>{activity.time}</ThemedText>
+                  <ThemedText style={[styles.activityTime, { color: textSecondary }]}>
+                    {activity.time}
+                  </ThemedText>
                 </View>
               </View>
             ))}
@@ -176,7 +193,9 @@ export default function HomeScreen() {
           <ThemedText style={styles.sectionTitle}>Thống kê nhanh</ThemedText>
           <ThemedView style={[styles.card, { backgroundColor: cardColor, borderColor }]}>
             <View style={styles.quickStat}>
-              <ThemedText style={[styles.quickStatLabel, { color: textSecondary }]}>Từ học nhiều nhất</ThemedText>
+              <ThemedText style={[styles.quickStatLabel, { color: textSecondary }]}>
+                Từ học nhiều nhất
+              </ThemedText>
               <ThemedText style={styles.quickStatValue}>Danh từ (45%)</ThemedText>
             </View>
             <View style={[styles.divider, { backgroundColor: borderColor }]} />
@@ -188,10 +207,17 @@ export default function HomeScreen() {
             </View>
             <View style={[styles.divider, { backgroundColor: borderColor }]} />
             <View style={styles.quickStat}>
-              <ThemedText style={[styles.quickStatLabel, { color: textSecondary }]}>Mục tiêu tuần</ThemedText>
+              <ThemedText style={[styles.quickStatLabel, { color: textSecondary }]}>
+                Mục tiêu tuần
+              </ThemedText>
               <View style={styles.progressBarContainer}>
                 <View style={[styles.progressBar, { backgroundColor: backgroundSecondary }]}>
-                  <View style={[styles.progressBarFill, { backgroundColor: successColor, width: "73%" }]} />
+                  <View
+                    style={[
+                      styles.progressBarFill,
+                      { backgroundColor: successColor, width: "73%" },
+                    ]}
+                  />
                 </View>
                 <ThemedText style={[styles.progressText, { color: textSecondary }]}>73%</ThemedText>
               </View>

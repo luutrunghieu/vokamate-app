@@ -19,28 +19,28 @@ const testItems: TestItem[] = [
     id: "buttons",
     title: "Buttons",
     icon: "square-outline",
-    route: "/(testing)/button-test",
+    route: "button-test",
     available: true,
   },
   {
     id: "inputs",
     title: "Inputs",
     icon: "text-outline",
-    route: "/(testing)/input-test",
+    route: "input-test",
     available: false,
   },
   {
     id: "cards",
     title: "Cards",
     icon: "card-outline",
-    route: "/(testing)/card-test",
+    route: "card-test",
     available: false,
   },
   {
     id: "modals",
     title: "Modals",
     icon: "albums-outline",
-    route: "/(testing)/modal-test",
+    route: "modal-test",
     available: false,
   },
 ];
@@ -64,16 +64,6 @@ export default function TestingScreen() {
       edges={["left", "right", "bottom"]}
     >
       <ThemedView style={styles.container}>
-        {/* Header */}
-        <ThemedView style={styles.header}>
-          <ThemedText type="title" style={styles.headerTitle}>
-            Testing
-          </ThemedText>
-          <ThemedText style={[styles.headerSubtitle, { color: textSecondary }]}>
-            Component testing pages
-          </ThemedText>
-        </ThemedView>
-
         <ScrollView style={styles.content} showsVerticalScrollIndicator={false}>
           <ThemedView style={[styles.card, { backgroundColor: cardColor, borderColor }]}>
             {testItems.map((item, index) => (
@@ -145,6 +135,7 @@ const styles = StyleSheet.create({
   },
   content: {
     flex: 1,
+    paddingVertical: 32,
     paddingHorizontal: 20,
   },
   card: {

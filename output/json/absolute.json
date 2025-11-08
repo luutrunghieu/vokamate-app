@@ -1,0 +1,189 @@
+{
+  "word": "absolute",
+  "phonetics": {
+    "us": "/ˈæb.sə.luːt/",
+    "uk": "/ˈæb.sə.luːt/"
+  },
+  "definitions": [
+    {
+      "word_vi": [
+        "hoàn toàn",
+        "tuyệt đối"
+      ],
+      "part_of_speech": [
+        "adjective"
+      ],
+      "sense_label": {
+        "en": "complete",
+        "vi": "hoàn toàn"
+      },
+      "popularity": 5,
+      "definition_en": "Complete and total, without any limitation or restriction.",
+      "definition_vi": "Hoàn toàn và trọn vẹn, không có bất kỳ giới hạn hay hạn chế nào.",
+      "example_en": "The project was an absolute success.",
+      "example_vi": "Dự án đó là một thành công hoàn toàn."
+    },
+    {
+      "word_vi": [
+        "tuyệt đối",
+        "độc lập"
+      ],
+      "part_of_speech": [
+        "adjective"
+      ],
+      "sense_label": {
+        "en": "independent",
+        "vi": "độc lập"
+      },
+      "popularity": 5,
+      "definition_en": "Not relative to or dependent on anything else; independent.",
+      "definition_vi": "Không tương đối hoặc phụ thuộc vào bất cứ điều gì khác; độc lập.",
+      "example_en": "She has absolute control over her decisions.",
+      "example_vi": "Cô ấy có quyền kiểm soát tuyệt đối đối với quyết định của mình."
+    },
+    {
+      "word_vi": [
+        "chắc chắn",
+        "xác định"
+      ],
+      "part_of_speech": [
+        "adjective"
+      ],
+      "sense_label": {
+        "en": "certain",
+        "vi": "chắc chắn"
+      },
+      "popularity": 4,
+      "definition_en": "Certain, definite, and without any doubt.",
+      "definition_vi": "Chắc chắn, rõ ràng và không có bất kỳ nghi ngờ nào.",
+      "example_en": "I have absolute confidence in her abilities.",
+      "example_vi": "Tôi có sự tự tin tuyệt đối vào khả năng của cô ấy."
+    },
+    {
+      "word_vi": [
+        "tối cao",
+        "chuyên quyền"
+      ],
+      "part_of_speech": [
+        "adjective"
+      ],
+      "sense_label": {
+        "en": "power",
+        "vi": "quyền lực"
+      },
+      "popularity": 4,
+      "definition_en": "Having unlimited power or authority.",
+      "definition_vi": "Có quyền lực hoặc thẩm quyền không giới hạn.",
+      "example_en": "The king ruled with absolute power.",
+      "example_vi": "Nhà vua cai trị với quyền lực tối cao."
+    },
+    {
+      "word_vi": [
+        "tinh khiết",
+        "nguyên chất"
+      ],
+      "part_of_speech": [
+        "adjective"
+      ],
+      "sense_label": {
+        "en": "pure",
+        "vi": "tinh khiết"
+      },
+      "popularity": 3,
+      "definition_en": "Pure or unmixed with other substances.",
+      "definition_vi": "Tinh khiết hoặc không pha trộn với các chất khác.",
+      "example_en": "The bottle contains absolute alcohol.",
+      "example_vi": "Chai này chứa cồn nguyên chất."
+    },
+    {
+      "word_vi": [
+        "độc lập",
+        "riêng biệt"
+      ],
+      "part_of_speech": [
+        "adjective"
+      ],
+      "sense_label": {
+        "en": "standalone",
+        "vi": "riêng lẻ"
+      },
+      "popularity": 3,
+      "definition_en": "Viewed or existing independently without relation to other things.",
+      "definition_vi": "Được xem xét hoặc tồn tại một cách độc lập mà không liên quan đến những thứ khác.",
+      "example_en": "Each case should be judged as an absolute matter.",
+      "example_vi": "Mỗi trường hợp nên được đánh giá như một vấn đề độc lập."
+    },
+    {
+      "word_vi": [
+        "điều tuyệt đối",
+        "nguyên tắc tuyệt đối"
+      ],
+      "part_of_speech": [
+        "noun"
+      ],
+      "sense_label": {
+        "en": "principle",
+        "vi": "nguyên tắc"
+      },
+      "popularity": 3,
+      "definition_en": "A value or principle regarded as universally valid or true.",
+      "definition_vi": "Một giá trị hoặc nguyên tắc được coi là có giá trị hoặc đúng đắn phổ quát.",
+      "example_en": "Moral absolutes guide his behavior.",
+      "example_vi": "Những nguyên tắc đạo đức tuyệt đối định hướng hành vi của anh ấy."
+    },
+    {
+      "word_vi": [
+        "cái tuyệt đối",
+        "thực tại tối hậu"
+      ],
+      "part_of_speech": [
+        "noun"
+      ],
+      "sense_label": {
+        "en": "reality",
+        "vi": "thực tại"
+      },
+      "popularity": 2,
+      "definition_en": "Philosophy: Ultimate reality or that which exists independently of perception.",
+      "definition_vi": "Triết học: Thực tại tối hậu hoặc cái tồn tại độc lập với nhận thức.",
+      "example_en": "Philosophers debate the nature of the absolute.",
+      "example_vi": "Các nhà triết học tranh luận về bản chất của cái tuyệt đối."
+    },
+    {
+      "word_vi": [
+        "tuyệt đối",
+        "độc lập"
+      ],
+      "part_of_speech": [
+        "adjective"
+      ],
+      "sense_label": {
+        "en": "grammar",
+        "vi": "ngữ pháp"
+      },
+      "popularity": 2,
+      "definition_en": "Grammar: Used without a usual syntactic relation to other words in a sentence.",
+      "definition_vi": "Ngữ pháp: Được sử dụng mà không có mối quan hệ cú pháp thông thường với các từ khác trong câu.",
+      "example_en": "The absolute construction stands alone in the sentence.",
+      "example_vi": "Cấu trúc tuyệt đối đứng độc lập trong câu."
+    },
+    {
+      "word_vi": [
+        "tuyệt đối",
+        "theo thang đo tuyệt đối"
+      ],
+      "part_of_speech": [
+        "adjective"
+      ],
+      "sense_label": {
+        "en": "measurement",
+        "vi": "đo lường"
+      },
+      "popularity": 2,
+      "definition_en": "Physics: Measured on a scale that starts from absolute zero or a universal reference point.",
+      "definition_vi": "Vật lý: Được đo trên thang đo bắt đầu từ điểm không tuyệt đối hoặc điểm tham chiếu phổ quát.",
+      "example_en": "Temperature is measured in absolute degrees.",
+      "example_vi": "Nhiệt độ được đo bằng độ tuyệt đối."
+    }
+  ]
+}

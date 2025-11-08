@@ -1,8 +1,10 @@
 import { ThemedText } from "@/components/themed-text";
+import { tailwindColors } from "@/constants/tailwind-colors";
 import { useThemeColor } from "@/hooks/use-theme-color";
 import { WordDefinition } from "@/types/translation";
 import { VocabularyFolder } from "@/types/vocabulary";
 import BottomSheet from "@gorhom/bottom-sheet";
+import { LinearGradient } from "expo-linear-gradient";
 import { useRef, useState } from "react";
 import { ScrollView, StyleSheet, View } from "react-native";
 import { DefinitionItem } from "./definition-item";
@@ -15,8 +17,13 @@ interface DefinitionViewProps {
   onPlayPronunciation?: (accent: "us" | "uk") => void;
 }
 
-export function DefinitionView({ definition, onSaveToFolder, onPlayPronunciation }: DefinitionViewProps) {
+export function DefinitionView({
+  definition,
+  onSaveToFolder,
+  onPlayPronunciation,
+}: DefinitionViewProps) {
   const cardBg = useThemeColor({}, "card");
+  const borderColor = useThemeColor({}, "outlineSecondary");
   const textSecondary = useThemeColor({}, "textSecondary");
   const bottomSheetRef = useRef<BottomSheet>(null);
   const [selectedDefinitionId, setSelectedDefinitionId] = useState<string | null>(null);
@@ -34,25 +41,68 @@ export function DefinitionView({ definition, onSaveToFolder, onPlayPronunciation
     setSelectedDefinitionId(null);
   };
 
+  // Normalize pronunciation to object format
+  const pronunciation =
+    typeof definition.pronunciation === "string"
+      ? { us: definition.pronunciation, uk: definition.pronunciation }
+      : definition.pronunciation;
+
+  // Sort definitions by popularity (higher first), then by index for those without popularity
+  const sortedDefinitions = [...definition.definitions].sort((a, b) => {
+    const aPopularity = a.popularity ?? 0;
+    const bPopularity = b.popularity ?? 0;
+    return bPopularity - aPopularity; // Descending order (higher first)
+  });
+
+  const backgroundColor = tailwindColors.slate?.[100] || "#f2f4f7";
+
   return (
     <>
-      <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
-        <View style={[styles.card, { backgroundColor: cardBg }]}>
-          <WordHeader
-            word={definition.word}
-            pronunciation={definition.pronunciation}
-            onPlayPronunciation={onPlayPronunciation}
-          />
+      <View style={styles.scrollWrapper}>
+        <ScrollView
+          style={styles.container}
+          contentContainerStyle={styles.contentContainer}
+          showsVerticalScrollIndicator={false}
+          nestedScrollEnabled={true}
+          bounces={true}
+        >
+          <View style={[styles.headerCard, { backgroundColor: cardBg, borderColor: borderColor }]}>
+            <WordHeader
+              word={definition.word}
+              pronunciation={pronunciation}
+              onPlayPronunciation={onPlayPronunciation}
+            />
+          </View>
 
-          {definition.definitions.length > 0 ? (
-            definition.definitions.map((def, idx) => (
-              <DefinitionItem key={def.id} definition={def} index={idx} onSave={handleSaveClick} />
-            ))
-          ) : (
-            <ThemedText style={[styles.emptyText, { color: textSecondary }]}>Không tìm thấy định nghĩa</ThemedText>
-          )}
-        </View>
-      </ScrollView>
+          <View
+            style={[
+              styles.definitionsCard,
+              { backgroundColor: cardBg, borderColor: borderColor, marginTop: 12 },
+            ]}
+          >
+            {sortedDefinitions.length > 0 ? (
+              sortedDefinitions.map((def, idx) => (
+                <DefinitionItem
+                  key={def.id}
+                  definition={def}
+                  index={idx}
+                  onSave={handleSaveClick}
+                  isLast={idx === sortedDefinitions.length - 1}
+                />
+              ))
+            ) : (
+              <ThemedText style={[styles.emptyText, { color: textSecondary }]}>
+                Không tìm thấy định nghĩa
+              </ThemedText>
+            )}
+          </View>
+        </ScrollView>
+        <LinearGradient
+          colors={["#f2f4f7", "rgba(242, 244, 247, 0)"]}
+          style={styles.topGradient}
+          pointerEvents="none"
+        />
+      </View>
 
       <FolderSelectionSheet ref={bottomSheetRef} onSelectFolder={handleFolderSelect} />
     </>
@@ -60,21 +110,35 @@ export function DefinitionView({ definition, onSaveToFolder, onPlayPronunciation
 }
 
 const styles = StyleSheet.create({
+  scrollWrapper: {
+    flex: 1,
+    position: "relative",
+  },
   container: {
     flex: 1,
   },
-  card: {
-    borderRadius: 16,
+  contentContainer: {
+    paddingTop: 16,
+    paddingBottom: 16,
+  },
+  topGradient: {
+    position: "absolute",
+    top: 0,
+    left: 0,
+    right: 0,
+    height: 16,
+    zIndex: 1,
+  },
+  headerCard: {
+    borderRadius: 20,
     paddingVertical: 14,
     paddingHorizontal: 16,
-    shadowColor: "#000",
-    shadowOffset: {
-      width: 0,
-      height: 4,
-    },
-    shadowOpacity: 0.3,
-    shadowRadius: 8,
-    elevation: 8,
+    borderWidth: 1,
+  },
+  definitionsCard: {
+    borderRadius: 20,
+    paddingHorizontal: 16,
+    borderWidth: 1,
   },
   emptyText: {
     textAlign: "center",

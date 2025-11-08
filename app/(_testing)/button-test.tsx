@@ -52,16 +52,6 @@ export default function ButtonTestScreen() {
       edges={["left", "right", "bottom"]}
     >
       <ThemedView style={styles.container}>
-        {/* Header */}
-        <ThemedView style={styles.header}>
-          <ThemedText type="title" style={styles.headerTitle}>
-            Button Test
-          </ThemedText>
-          <ThemedText style={[styles.headerSubtitle, { color: textSecondary }]}>
-            Test all button variants and configurations
-          </ThemedText>
-        </ThemedView>
-
         <ScrollView style={styles.content} showsVerticalScrollIndicator={false}>
           {/* Button Variants Section */}
           {variants.map(({ variant, label }) => (
@@ -176,6 +166,8 @@ const styles = StyleSheet.create({
   },
   content: {
     flex: 1,
+    paddingVertical: 32,
+
     paddingHorizontal: 20,
   },
   section: {

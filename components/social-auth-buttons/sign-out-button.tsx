@@ -2,6 +2,7 @@ import { ThemedText } from "@/components/themed-text";
 import { useThemeColor } from "@/hooks/use-theme-color";
 import { supabase } from "@/lib/supabase";
 import { Ionicons } from "@expo/vector-icons";
+import { router } from "expo-router";
 import React from "react";
 import { StyleSheet, TouchableOpacity, View } from "react-native";
 
@@ -12,7 +13,9 @@ export default function SignOutButton() {
     const { error } = await supabase.auth.signOut();
     if (error) {
       console.error("Error signing out:", error);
+      return;
     }
+    router.replace("/login");
   };
 
   return (

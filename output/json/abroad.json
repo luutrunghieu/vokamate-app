@@ -1,0 +1,81 @@
+{
+  "word": "abroad",
+  "phonetics": {
+    "us": "/əˈbrɔd/",
+    "uk": "/əˈbrɔːd/"
+  },
+  "definitions": [
+    {
+      "word_vi": [
+        "ở nước ngoài",
+        "ra nước ngoài"
+      ],
+      "part_of_speech": [
+        "adverb"
+      ],
+      "sense_label": {
+        "en": "foreign country",
+        "vi": "nước ngoài"
+      },
+      "popularity": 5,
+      "definition_en": "In or to a foreign country or countries.",
+      "definition_vi": "Ở hoặc đến một hoặc nhiều quốc gia nước ngoài.",
+      "example_en": "She studied abroad for two years.",
+      "example_vi": "Cô ấy đã học ở nước ngoài trong hai năm."
+    },
+    {
+      "word_vi": [
+        "khắp nơi",
+        "rộng rãi"
+      ],
+      "part_of_speech": [
+        "adverb"
+      ],
+      "sense_label": {
+        "en": "wide area",
+        "vi": "diện rộng"
+      },
+      "popularity": 3,
+      "definition_en": "Over a wide area; in different directions.",
+      "definition_vi": "Trên một khu vực rộng; theo nhiều hướng khác nhau.",
+      "example_en": "The news spread abroad quickly.",
+      "example_vi": "Tin tức lan truyền rộng rãi một cách nhanh chóng."
+    },
+    {
+      "word_vi": [
+        "ngoài trời",
+        "ra ngoài"
+      ],
+      "part_of_speech": [
+        "adverb"
+      ],
+      "sense_label": {
+        "en": "outdoors",
+        "vi": "ngoài nhà"
+      },
+      "popularity": 2,
+      "definition_en": "Outside one's house; outdoors.",
+      "definition_vi": "Bên ngoài nhà của ai đó; ngoài trời.",
+      "example_en": "He rarely ventures abroad at night.",
+      "example_vi": "Anh ấy hiếm khi ra ngoài vào ban đêm."
+    },
+    {
+      "word_vi": [
+        "lưu hành",
+        "được biết đến"
+      ],
+      "part_of_speech": [
+        "adverb"
+      ],
+      "sense_label": {
+        "en": "circulation",
+        "vi": "lưu hành"
+      },
+      "popularity": 2,
+      "definition_en": "In circulation or current among people.",
+      "definition_vi": "Đang lưu hành hoặc phổ biến giữa mọi người.",
+      "example_en": "Rumors are abroad about the company.",
+      "example_vi": "Tin đồn đang được lưu hành về công ty."
+    }
+  ]
+}

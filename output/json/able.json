@@ -1,0 +1,64 @@
+{
+  "word": "able",
+  "phonetics": {
+    "us": "/ˈeɪbəl/",
+    "uk": "/ˈeɪbəl/"
+  },
+  "definitions": [
+    {
+      "word_vi": [
+        "có khả năng",
+        "có thể"
+      ],
+      "part_of_speech": [
+        "adjective"
+      ],
+      "sense_label": {
+        "en": "capability",
+        "vi": "khả năng"
+      },
+      "popularity": 5,
+      "definition_en": "Having the power, skill, means, or opportunity to do something.",
+      "definition_vi": "Có quyền lực, kỹ năng, phương tiện hoặc cơ hội để làm điều gì đó.",
+      "example_en": "She is able to speak three languages.",
+      "example_vi": "Cô ấy có thể nói ba thứ tiếng."
+    },
+    {
+      "word_vi": [
+        "tài năng",
+        "có năng lực",
+        "giỏi"
+      ],
+      "part_of_speech": [
+        "adjective"
+      ],
+      "sense_label": {
+        "en": "skill",
+        "vi": "kỹ năng"
+      },
+      "popularity": 4,
+      "definition_en": "Having considerable skill, proficiency, or intelligence; competent or talented.",
+      "definition_vi": "Có kỹ năng, trình độ hoặc trí thông minh đáng kể; có năng lực hoặc tài năng.",
+      "example_en": "He is an able teacher.",
+      "example_vi": "Anh ấy là một giáo viên giỏi."
+    },
+    {
+      "word_vi": [
+        "có thẩm quyền",
+        "hợp pháp"
+      ],
+      "part_of_speech": [
+        "adjective"
+      ],
+      "sense_label": {
+        "en": "authority",
+        "vi": "thẩm quyền"
+      },
+      "popularity": 2,
+      "definition_en": "Having the legal or official authority or capacity to act.",
+      "definition_vi": "Có thẩm quyền hoặc quyền hạn hợp pháp hoặc chính thức để hành động.",
+      "example_en": "Only able citizens can vote.",
+      "example_vi": "Chỉ những công dân có thẩm quyền mới có thể bỏ phiếu."
+    }
+  ]
+}

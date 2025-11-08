@@ -31,24 +31,22 @@ function BackButton() {
 
 export default function TestingLayout() {
   return (
-    <Stack
-      screenOptions={{
-        headerBackTitle: "Back", // Remove text from back button (only show icon)
-      }}
-    >
+    <Stack>
       <Stack.Screen
         name="testing"
         options={{
-          title: "",
-          headerBackTitle: "Back", // Remove text from back button (only show icon)
+          headerShown: true,
+          title: "Testing",
           headerLeft: () => <BackButton />,
+          headerBackTitle: "Back",
         }}
       />
       <Stack.Screen
         name="button-test"
         options={{
-          title: "",
-          headerBackTitle: "Back", // Remove text from back button (only show icon)
+          headerShown: true,
+          title: "Buttons",
+          headerBackTitle: "Back",
         }}
       />
     </Stack>

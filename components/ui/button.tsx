@@ -1,5 +1,5 @@
 import * as Haptics from "expo-haptics";
-import { ReactNode } from "react";
+import { ReactElement, ReactNode, cloneElement, isValidElement } from "react";
 import {
   ActivityIndicator,
   Pressable,
@@ -221,9 +221,9 @@ export function Button({
   const getButtonColors = () => {
     if (disabled) {
       return {
-        backgroundColor: colors.bgSecondary,
+        backgroundColor: colors.bgPrimary,
         color: colors.textTertiary,
-        borderColor: colors.outlinePrimary,
+        borderColor: colors.outlineSecondary,
         shadowColor: undefined,
       };
     }
@@ -285,6 +285,16 @@ export function Button({
   const hasText = !iconOnly && children;
   const hasLeadingIcon = !!leadingIcon;
   const hasTrailingIcon = !!trailingIcon;
+
+  // Helper function to apply button color to icon
+  const applyIconColor = (icon: ReactNode): ReactNode => {
+    if (!isValidElement(icon)) return icon;
+    const iconElement = icon as ReactElement<any>;
+    return cloneElement(iconElement, {
+      ...iconElement.props,
+      color: buttonColors.color,
+    });
+  };
 
   // Extract onPress from props to avoid override
   const { onPress, ...restProps } = props;
@@ -358,11 +368,15 @@ export function Button({
               <ActivityIndicator size="small" color={buttonColors.color} />
             ) : (
               <>
-                {hasLeadingIcon && <View style={styles.iconContainer}>{leadingIcon}</View>}
+                {hasLeadingIcon && (
+                  <View style={styles.iconContainer}>{applyIconColor(leadingIcon)}</View>
+                )}
                 {hasText && (
                   <Text style={[styles.text, { color: buttonColors.color }]}>{children}</Text>
                 )}
-                {hasTrailingIcon && <View style={styles.iconContainer}>{trailingIcon}</View>}
+                {hasTrailingIcon && (
+                  <View style={styles.iconContainer}>{applyIconColor(trailingIcon)}</View>
+                )}
               </>
             )}
           </View>

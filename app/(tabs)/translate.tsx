@@ -1,16 +1,26 @@
-import { ThemedText } from "@/components/themed-text";
-import { ThemedView } from "@/components/themed-view";
 import { DefinitionView } from "@/components/translation/definition-view";
-import { HistoryList } from "@/components/translation/history-list";
-import { SearchInput } from "@/components/translation/search-input";
-import { SuggestionsList } from "@/components/translation/suggestions-list";
+import { SearchInput, SearchInputRef } from "@/components/translation/search-input";
 import { IconSymbol } from "@/components/ui/icon-symbol";
+import { PageHeader } from "@/components/ui/page-header";
+import { tailwindColors } from "@/constants/tailwind-colors";
 import { useThemeColor } from "@/hooks/use-theme-color";
 import { useTranslation } from "@/hooks/use-translation";
-import { StyleSheet, TouchableOpacity } from "react-native";
+import { LinearGradient } from "expo-linear-gradient";
+import { useEffect, useRef, useState } from "react";
+import {
+  Animated,
+  Keyboard,
+  StyleSheet,
+  TouchableOpacity,
+  TouchableWithoutFeedback,
+  View,
+} from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function TranslateScreen() {
+  const searchInputRef = useRef<SearchInputRef>(null);
+  const [isSearchFocused, setIsSearchFocused] = useState(false);
+  const marginTopAnimation = useRef(new Animated.Value(40)).current;
   const {
     searchText,
     setSearchText,
@@ -25,41 +35,92 @@ export default function TranslateScreen() {
     selectSuggestion,
   } = useTranslation();
 
-  const backgroundColor = useThemeColor({}, "background");
-  const bgSecondary = useThemeColor({}, "backgroundSecondary");
-  const iconColor = useThemeColor({}, "icon");
+  const backgroundColor = tailwindColors.slate[100] || "#f2f4f7";
+  const textPrimary = useThemeColor({}, "textPrimary");
+  const iconColor = useThemeColor({}, "textPrimary");
+
+  // Animate margin-top based on focus state and definition presence
+  useEffect(() => {
+    const shouldShowLower = searchText.trim() === "" && !isSearchFocused && !currentDefinition;
+    const targetMarginTop = shouldShowLower ? 40 : 0;
+
+    Animated.timing(marginTopAnimation, {
+      toValue: targetMarginTop,
+      duration: 160,
+      useNativeDriver: false,
+    }).start();
+  }, [searchText, isSearchFocused, currentDefinition, marginTopAnimation]);
 
   const handlePlayPronunciation = (accent: "us" | "uk") => {
     // TODO: Implement pronunciation playback
     console.log(`Playing ${accent.toUpperCase()} pronunciation`);
   };
 
+  const handlePressOutside = () => {
+    searchInputRef.current?.blur();
+    Keyboard.dismiss();
+  };
+
+  const handleSearchFocus = () => {
+    setIsSearchFocused(true);
+  };
+
+  const handleSearchBlur = () => {
+    setIsSearchFocused(false);
+  };
+
   return (
     <SafeAreaView style={[styles.safeArea, { backgroundColor }]} edges={["top"]}>
-      <ThemedView style={styles.container}>
-        <ThemedView style={styles.header}>
-          <ThemedText type="title">Dịch</ThemedText>
-          <TouchableOpacity style={[styles.settingsButton, { backgroundColor: bgSecondary }]}>
-            <IconSymbol name="slider.horizontal.3" size={24} color={iconColor} />
-          </TouchableOpacity>
-        </ThemedView>
+      <View style={styles.container}>
+        <TouchableWithoutFeedback onPress={handlePressOutside}>
+          <View>
+            <LinearGradient
+              colors={["rgba(241,245,249,0.5)", "rgba(241,245,249,0)"]}
+              style={styles.headerGradient}
+            >
+              <PageHeader
+                title="Từ điển"
+                rightButtons={
+                  <TouchableOpacity style={styles.settingsButton}>
+                    <IconSymbol name="slider.horizontal.3" size={20} color={iconColor} />
+                  </TouchableOpacity>
+                }
+              />
+            </LinearGradient>
 
-        <ThemedView style={styles.content}>
-          <SearchInput value={searchText} onChangeText={setSearchText} onSubmit={() => translate()} />
+            <Animated.View style={[styles.searchWrapper, { marginTop: marginTopAnimation }]}>
+              <View style={styles.searchContainer}>
+                <SearchInput
+                  ref={searchInputRef}
+                  value={searchText}
+                  onChangeText={setSearchText}
+                  onSubmit={() => translate()}
+                  onFocus={handleSearchFocus}
+                  onBlur={handleSearchBlur}
+                />
+              </View>
+            </Animated.View>
+          </View>
+        </TouchableWithoutFeedback>
 
-          {searchText.trim() === "" ? (
-            <HistoryList data={history} onClearHistory={clearHistory} onItemPress={selectHistoryItem} />
-          ) : currentDefinition ? (
+        {currentDefinition ? (
+          <View style={styles.definitionWrapper}>
             <DefinitionView
               definition={currentDefinition}
               onSaveToFolder={saveDefinitionToFolder}
               onPlayPronunciation={handlePlayPronunciation}
             />
-          ) : (
-            <SuggestionsList suggestions={suggestions} onSelectSuggestion={selectSuggestion} />
-          )}
-        </ThemedView>
-      </ThemedView>
+          </View>
+        ) : isSearchFocused || searchText.trim() !== "" ? (
+          <TouchableWithoutFeedback onPress={handlePressOutside}>
+            <View style={styles.definitionWrapper}>
+              <View style={styles.emptyContent} />
+            </View>
+          </TouchableWithoutFeedback>
+        ) : (
+          <View style={styles.definitionWrapper} />
+        )}
+      </View>
     </SafeAreaView>
   );
 }
@@ -71,24 +132,33 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
-  header: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
-    paddingHorizontal: 16,
-    paddingVertical: 12,
+  headerGradient: {
+    paddingTop: 6,
+    paddingBottom: 8,
   },
   settingsButton: {
     width: 44,
     height: 44,
-    borderRadius: 22,
+    borderRadius: 99,
+    backgroundColor: tailwindColors.white,
+    borderWidth: 1,
+    borderColor: tailwindColors.slate[200],
     justifyContent: "center",
     alignItems: "center",
   },
   content: {
+    paddingTop: 24,
+    paddingHorizontal: 16,
+  },
+  searchWrapper: {
+    paddingHorizontal: 16,
+  },
+  searchContainer: {},
+  definitionWrapper: {
     flex: 1,
-    flexDirection: "column",
-    gap: 16,
-    padding: 16,
+    paddingHorizontal: 16,
+  },
+  emptyContent: {
+    flex: 1,
   },
 });

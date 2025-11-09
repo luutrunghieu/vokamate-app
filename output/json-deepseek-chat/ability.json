@@ -1,0 +1,81 @@
+{
+  "word": "ability",
+  "phonetics": {
+    "us": "/əˈbɪləti/",
+    "uk": "/əˈbɪləti/"
+  },
+  "definitions": [
+    {
+      "word_vi": [
+        "khả năng",
+        "năng lực"
+      ],
+      "part_of_speech": [
+        "noun"
+      ],
+      "sense_label": {
+        "en": "capacity",
+        "vi": "năng lực"
+      },
+      "popularity": 5,
+      "definition_en": "The capacity or power to do something physical or mental.",
+      "definition_vi": "Khả năng hoặc sức mạnh để thực hiện một việc gì đó về thể chất hoặc tinh thần.",
+      "example_en": "She has the ability to solve complex problems.",
+      "example_vi": "Cô ấy có khả năng giải quyết các vấn đề phức tạp."
+    },
+    {
+      "word_vi": [
+        "kỹ năng",
+        "tài năng"
+      ],
+      "part_of_speech": [
+        "noun"
+      ],
+      "sense_label": {
+        "en": "skill",
+        "vi": "kỹ năng"
+      },
+      "popularity": 5,
+      "definition_en": "A particular skill or talent.",
+      "definition_vi": "Một kỹ năng hoặc tài năng cụ thể.",
+      "example_en": "He has a natural ability for music.",
+      "example_vi": "Anh ấy có khả năng bẩm sinh về âm nhạc."
+    },
+    {
+      "word_vi": [
+        "năng lực",
+        "khả năng thực hiện"
+      ],
+      "part_of_speech": [
+        "noun"
+      ],
+      "sense_label": {
+        "en": "competence",
+        "vi": "năng lực"
+      },
+      "popularity": 4,
+      "definition_en": "The quality of being able to perform; competence in doing something.",
+      "definition_vi": "Phẩm chất có thể thực hiện; năng lực trong việc làm điều gì đó.",
+      "example_en": "Her ability to lead the team is impressive.",
+      "example_vi": "Khả năng lãnh đạo nhóm của cô ấy rất ấn tượng."
+    },
+    {
+      "word_vi": [
+        "quyền hạn",
+        "thẩm quyền"
+      ],
+      "part_of_speech": [
+        "noun"
+      ],
+      "sense_label": {
+        "en": "authority",
+        "vi": "thẩm quyền"
+      },
+      "popularity": 3,
+      "definition_en": "Legal or official power to act or make decisions.",
+      "definition_vi": "Quyền hạn pháp lý hoặc chính thức để hành động hoặc đưa ra quyết định.",
+      "example_en": "The manager has the ability to approve the budget.",
+      "example_vi": "Người quản lý có thẩm quyền phê duyệt ngân sách."
+    }
+  ]
+}

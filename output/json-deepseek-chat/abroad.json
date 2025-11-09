@@ -1,0 +1,81 @@
+{
+  "word": "abroad",
+  "phonetics": {
+    "us": "/əˈbrɔd/",
+    "uk": "/əˈbrɔːd/"
+  },
+  "definitions": [
+    {
+      "word_vi": [
+        "ở nước ngoài",
+        "ra nước ngoài"
+      ],
+      "part_of_speech": [
+        "adverb"
+      ],
+      "sense_label": {
+        "en": "foreign country",
+        "vi": "nước ngoài"
+      },
+      "popularity": 5,
+      "definition_en": "In or to a foreign country or countries.",
+      "definition_vi": "Ở hoặc đến một quốc gia hoặc các quốc gia nước ngoài.",
+      "example_en": "She is studying abroad this year.",
+      "example_vi": "Cô ấy đang du học ở nước ngoài năm nay."
+    },
+    {
+      "word_vi": [
+        "lan truyền",
+        "được biết rộng rãi"
+      ],
+      "part_of_speech": [
+        "adverb"
+      ],
+      "sense_label": {
+        "en": "circulation",
+        "vi": "lưu hành"
+      },
+      "popularity": 3,
+      "definition_en": "In circulation or at large; widely dispersed or known.",
+      "definition_vi": "Đang lưu hành hoặc phổ biến; được lan truyền hoặc biết đến rộng rãi.",
+      "example_en": "The news spread abroad quickly.",
+      "example_vi": "Tin tức lan truyền rộng rãi một cách nhanh chóng."
+    },
+    {
+      "word_vi": [
+        "khắp nơi",
+        "nhiều phía"
+      ],
+      "part_of_speech": [
+        "adverb"
+      ],
+      "sense_label": {
+        "en": "wide area",
+        "vi": "khu vực rộng"
+      },
+      "popularity": 2,
+      "definition_en": "Over a wide area; in different directions.",
+      "definition_vi": "Trên một khu vực rộng; theo nhiều hướng khác nhau.",
+      "example_en": "The seeds were scattered abroad by the wind.",
+      "example_vi": "Hạt giống được gió thổi tung khắp nơi."
+    },
+    {
+      "word_vi": [
+        "nước ngoài",
+        "hải ngoại"
+      ],
+      "part_of_speech": [
+        "adjective"
+      ],
+      "sense_label": {
+        "en": "foreign location",
+        "vi": "vị trí nước ngoài"
+      },
+      "popularity": 1,
+      "definition_en": "Going to or located in a foreign country.",
+      "definition_vi": "Đi đến hoặc nằm ở một quốc gia nước ngoài.",
+      "example_en": "He is taking an abroad trip next month.",
+      "example_vi": "Anh ấy sẽ có một chuyến đi nước ngoài vào tháng tới."
+    }
+  ]
+}

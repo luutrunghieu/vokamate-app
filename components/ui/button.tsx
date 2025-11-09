@@ -449,7 +449,7 @@ const styles = StyleSheet.create({
   text: {
     fontSize: 14,
     lineHeight: 20,
-    fontWeight: "600", // Semi Bold
+    fontWeight: "600",
     fontFamily: "Inter",
   },
 });

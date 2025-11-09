@@ -1,0 +1,26 @@
+{
+  "word": "a",
+  "phonetics": {
+    "us": "/ə/, /eɪ/",
+    "uk": "/ə/, /eɪ/"
+  },
+  "definitions": [
+    {
+      "word_vi": [
+        "một"
+      ],
+      "part_of_speech": [
+        "determiner"
+      ],
+      "sense_label": {
+        "en": "single",
+        "vi": "đơn lẻ"
+      },
+      "popularity": 5,
+      "definition_en": "Used before singular countable nouns to indicate one unspecified person or thing, or before a noun being mentioned for the first time.",
+      "definition_vi": "Dùng trước danh từ đếm được số ít để chỉ một người hoặc vật không xác định, hoặc trước danh từ được nhắc đến lần đầu tiên.",
+      "example_en": "I saw a cat in the garden.",
+      "example_vi": "Tôi nhìn thấy một con mèo trong vườn."
+    }
+  ]
+}

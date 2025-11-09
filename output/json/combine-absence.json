@@ -1,0 +1,99 @@
+{
+  "word": "absence",
+  "phonetics": {
+    "us": "/ˈæbsəns/",
+    "uk": "/ˈæbsəns/"
+  },
+  "definitions": [
+    {
+      "word_vi": [
+        "sự vắng mặt",
+        "tình trạng vắng mặt"
+      ],
+      "part_of_speech": [
+        "noun"
+      ],
+      "sense_label": {
+        "en": "presence",
+        "vi": "sự hiện diện"
+      },
+      "popularity": 5,
+      "definition_en": "The state of being away from a place or person.",
+      "definition_vi": "Tình trạng không có mặt ở một nơi hoặc với một người nào đó.",
+      "example_en": "His absence from the meeting was noted.",
+      "example_vi": "Sự vắng mặt của anh ấy trong cuộc họp đã được ghi nhận."
+    },
+    {
+      "word_vi": [
+        "thời gian vắng mặt",
+        "khoảng thời gian xa cách"
+      ],
+      "part_of_speech": [
+        "noun"
+      ],
+      "sense_label": {
+        "en": "duration",
+        "vi": "thời gian"
+      },
+      "popularity": 5,
+      "definition_en": "The period of time during which someone is away.",
+      "definition_vi": "Khoảng thời gian mà ai đó không có mặt.",
+      "example_en": "She returned after a long absence.",
+      "example_vi": "Cô ấy đã trở lại sau một thời gian dài vắng mặt."
+    },
+    {
+      "word_vi": [
+        "sự vắng mặt",
+        "sự không tham dự"
+      ],
+      "part_of_speech": [
+        "noun"
+      ],
+      "sense_label": {
+        "en": "attendance",
+        "vi": "sự tham dự"
+      },
+      "popularity": 4,
+      "definition_en": "Failure to attend or be present at a required or expected place.",
+      "definition_vi": "Việc không tham dự hoặc không có mặt ở một nơi được yêu cầu hoặc mong đợi.",
+      "example_en": "Too many absences will affect your grade.",
+      "example_vi": "Quá nhiều lần vắng mặt sẽ ảnh hưởng đến điểm số của bạn."
+    },
+    {
+      "word_vi": [
+        "sự thiếu vắng",
+        "sự không tồn tại"
+      ],
+      "part_of_speech": [
+        "noun"
+      ],
+      "sense_label": {
+        "en": "existence",
+        "vi": "sự tồn tại"
+      },
+      "popularity": 4,
+      "definition_en": "The lack or non-existence of something.",
+      "definition_vi": "Sự thiếu hoặc không tồn tại của một thứ gì đó.",
+      "example_en": "The absence of evidence made the case difficult.",
+      "example_vi": "Sự thiếu bằng chứng khiến vụ án trở nên khó khăn."
+    },
+    {
+      "word_vi": [
+        "sự lơ đãng",
+        "sự mất tập trung"
+      ],
+      "part_of_speech": [
+        "noun"
+      ],
+      "sense_label": {
+        "en": "attention",
+        "vi": "sự chú ý"
+      },
+      "popularity": 3,
+      "definition_en": "Inattentiveness or distraction from one's surroundings.",
+      "definition_vi": "Sự không chú ý hoặc mất tập trung khỏi môi trường xung quanh.",
+      "example_en": "His absence of mind caused him to miss the turn.",
+      "example_vi": "Sự lơ đãng của anh ấy khiến anh bỏ lỡ ngã rẽ."
+    }
+  ]
+}

@@ -5,8 +5,10 @@ import { SymbolViewProps, SymbolWeight } from "expo-symbols";
 import { ComponentProps } from "react";
 import { OpaqueColorValue, type StyleProp, type TextStyle } from "react-native";
 
-type IconMapping = Record<SymbolViewProps["name"], ComponentProps<typeof MaterialIcons>["name"]>;
-type IconSymbolName = keyof typeof MAPPING;
+type IconMapping = {
+  [key: string]: ComponentProps<typeof MaterialIcons>["name"];
+};
+export type IconSymbolName = keyof typeof MAPPING;
 
 /**
  * Add your SF Symbols to Material Icons mappings here.
@@ -30,6 +32,10 @@ const MAPPING = {
   checkmark: "check",
   "plus-circle": "add-circle",
   settings: "settings",
+  "mail.fill": "mail",
+  mail: "mail-outline",
+  "help-circle": "help-outline",
+  "help-circle.fill": "help",
 } as IconMapping;
 
 /**

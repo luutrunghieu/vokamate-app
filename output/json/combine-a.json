@@ -1,0 +1,28 @@
+{
+  "word": "a",
+  "phonetics": {
+    "us": "/ə/",
+    "uk": "/ə/"
+  },
+  "definitions": [
+    {
+      "word_vi": [
+        "một",
+        "cái",
+        "chiếc"
+      ],
+      "part_of_speech": [
+        "determiner"
+      ],
+      "sense_label": {
+        "en": "unspecified",
+        "vi": "không xác định"
+      },
+      "popularity": 5,
+      "definition_en": "Used before singular countable nouns to indicate one unspecified person or thing, or to indicate membership in a class or group.",
+      "definition_vi": "Được dùng trước danh từ đếm được số ít để chỉ một người hoặc vật không xác định, hoặc để chỉ sự thuộc về một nhóm hoặc lớp.",
+      "example_en": "I saw a cat on the fence.",
+      "example_vi": "Tôi thấy một con mèo trên hàng rào."
+    }
+  ]
+}

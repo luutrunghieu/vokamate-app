@@ -1,0 +1,135 @@
+{
+  "word": "about",
+  "phonetics": {
+    "us": "/əˈbaʊt/",
+    "uk": "/əˈbaʊt/"
+  },
+  "definitions": [
+    {
+      "word_vi": [
+        "về",
+        "liên quan đến"
+      ],
+      "part_of_speech": [
+        "preposition"
+      ],
+      "sense_label": {
+        "en": "subject",
+        "vi": "chủ đề"
+      },
+      "popularity": 5,
+      "definition_en": "Concerning or relating to a particular subject or topic.",
+      "definition_vi": "Liên quan hoặc đề cập đến một chủ đề hoặc vấn đề cụ thể.",
+      "example_en": "Let's talk about the project.",
+      "example_vi": "Hãy nói về dự án."
+    },
+    {
+      "word_vi": [
+        "khoảng",
+        "chừng"
+      ],
+      "part_of_speech": [
+        "adverb"
+      ],
+      "sense_label": {
+        "en": "approximate",
+        "vi": "ước lượng"
+      },
+      "popularity": 5,
+      "definition_en": "Approximately or roughly (used with numbers or quantities).",
+      "definition_vi": "Xấp xỉ hoặc khoảng chừng (dùng với số hoặc số lượng).",
+      "example_en": "There were about 50 people at the party.",
+      "example_vi": "Có khoảng 50 người tại bữa tiệc."
+    },
+    {
+      "word_vi": [
+        "quanh",
+        "gần"
+      ],
+      "part_of_speech": [
+        "preposition"
+      ],
+      "sense_label": {
+        "en": "location",
+        "vi": "vị trí"
+      },
+      "popularity": 4,
+      "definition_en": "In the vicinity of or near a place.",
+      "definition_vi": "Ở khu vực lân cận hoặc gần một địa điểm.",
+      "example_en": "She lives about the city center.",
+      "example_vi": "Cô ấy sống gần trung tâm thành phố."
+    },
+    {
+      "word_vi": [
+        "xung quanh",
+        "quanh quẩn"
+      ],
+      "part_of_speech": [
+        "adverb"
+      ],
+      "sense_label": {
+        "en": "movement",
+        "vi": "di chuyển"
+      },
+      "popularity": 4,
+      "definition_en": "In various directions or here and there without purpose.",
+      "definition_vi": "Theo nhiều hướng khác nhau hoặc lang thang không mục đích.",
+      "example_en": "The children were running about in the park.",
+      "example_vi": "Bọn trẻ đang chạy xung quanh trong công viên."
+    },
+    {
+      "word_vi": [
+        "có mặt",
+        "hiện diện"
+      ],
+      "part_of_speech": [
+        "adjective"
+      ],
+      "sense_label": {
+        "en": "presence",
+        "vi": "sự hiện diện"
+      },
+      "popularity": 3,
+      "definition_en": "Present or moving around in a place (usually used predicatively).",
+      "definition_vi": "Có mặt hoặc di chuyển xung quanh một nơi (thường dùng như vị ngữ).",
+      "example_en": "Is the manager about today?",
+      "example_vi": "Hôm nay quản lý có mặt không?"
+    },
+    {
+      "word_vi": [
+        "bao quanh",
+        "xung quanh"
+      ],
+      "part_of_speech": [
+        "preposition"
+      ],
+      "sense_label": {
+        "en": "surrounding",
+        "vi": "bao quanh"
+      },
+      "popularity": 2,
+      "definition_en": "Surrounding or on all sides of something.",
+      "definition_vi": "Bao quanh hoặc ở mọi phía của cái gì đó.",
+      "example_en": "There was a fence about the garden.",
+      "example_vi": "Có một hàng rào bao quanh khu vườn."
+    },
+    {
+      "word_vi": [
+        "ngược lại",
+        "theo vòng"
+      ],
+      "part_of_speech": [
+        "adverb"
+      ],
+      "sense_label": {
+        "en": "direction",
+        "vi": "hướng"
+      },
+      "popularity": 2,
+      "definition_en": "In rotation or the opposite direction.",
+      "definition_vi": "Theo vòng quay hoặc hướng ngược lại.",
+      "example_en": "Turn the knob about to open it.",
+      "example_vi": "Xoay núm theo chiều ngược lại để mở nó."
+    }
+  ]
+}

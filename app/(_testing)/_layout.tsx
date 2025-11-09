@@ -49,6 +49,14 @@ export default function TestingLayout() {
           headerBackTitle: "Back",
         }}
       />
+      <Stack.Screen
+        name="input-test"
+        options={{
+          headerShown: true,
+          title: "Inputs",
+          headerBackTitle: "Back",
+        }}
+      />
     </Stack>
   );
 }

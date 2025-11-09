@@ -1,9 +1,11 @@
 import { ThemedText } from "@/components/themed-text";
 import { tailwindColors } from "@/constants/tailwind-colors";
+import { useAuthContext } from "@/hooks/use-auth-context";
 import { useThemeColor } from "@/hooks/use-theme-color";
 import { WordDefinition } from "@/types/translation";
 import { VocabularyFolder } from "@/types/vocabulary";
 import BottomSheet from "@gorhom/bottom-sheet";
+import { useRouter } from "expo-router";
 import { LinearGradient } from "expo-linear-gradient";
 import { useRef, useState } from "react";
 import { ScrollView, StyleSheet, View } from "react-native";
@@ -27,8 +29,14 @@ export function DefinitionView({
   const textSecondary = useThemeColor({}, "textSecondary");
   const bottomSheetRef = useRef<BottomSheet>(null);
   const [selectedDefinitionId, setSelectedDefinitionId] = useState<string | null>(null);
+  const { isLoggedIn } = useAuthContext();
+  const router = useRouter();
 
   const handleSaveClick = (definitionId: string) => {
+    if (!isLoggedIn) {
+      router.push("/login");
+      return;
+    }
     setSelectedDefinitionId(definitionId);
     bottomSheetRef.current?.expand();
   };

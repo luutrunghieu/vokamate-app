@@ -1,0 +1,81 @@
+{
+  "word": "abroad",
+  "phonetics": {
+    "us": "/əˈbrɔːd/",
+    "uk": "/əˈbrɒd/"
+  },
+  "definitions": [
+    {
+      "word_vi": [
+        "ở nước ngoài",
+        "ra nước ngoài"
+      ],
+      "part_of_speech": [
+        "adverb"
+      ],
+      "sense_label": {
+        "en": "foreign",
+        "vi": "nước ngoài"
+      },
+      "popularity": 5,
+      "definition_en": "In or to a foreign country or countries",
+      "definition_vi": "Ở hoặc đến một quốc gia hoặc các quốc gia nước ngoài",
+      "example_en": "She travels abroad every summer",
+      "example_vi": "Cô ấy đi du lịch nước ngoài mỗi mùa hè"
+    },
+    {
+      "word_vi": [
+        "rộng khắp",
+        "lan rộng"
+      ],
+      "part_of_speech": [
+        "adverb"
+      ],
+      "sense_label": {
+        "en": "area",
+        "vi": "khu vực"
+      },
+      "popularity": 3,
+      "definition_en": "Over a wide area; in different directions",
+      "definition_vi": "Trên một khu vực rộng lớn; theo các hướng khác nhau",
+      "example_en": "The news spread abroad quickly",
+      "example_vi": "Tin tức lan truyền rộng khắp nhanh chóng"
+    },
+    {
+      "word_vi": [
+        "lưu hành",
+        "truyền bá"
+      ],
+      "part_of_speech": [
+        "adverb"
+      ],
+      "sense_label": {
+        "en": "circulation",
+        "vi": "lưu thông"
+      },
+      "popularity": 2,
+      "definition_en": "In circulation or at large among people",
+      "definition_vi": "Đang lưu hành hoặc phổ biến rộng rãi trong mọi người",
+      "example_en": "Rumors were abroad about the changes",
+      "example_vi": "Những tin đồn đang lưu hành về những thay đổi"
+    },
+    {
+      "word_vi": [
+        "ngoài trời",
+        "bên ngoài"
+      ],
+      "part_of_speech": [
+        "adverb"
+      ],
+      "sense_label": {
+        "en": "outside",
+        "vi": "bên ngoài"
+      },
+      "popularity": 2,
+      "definition_en": "Out of doors; outside",
+      "definition_vi": "Ra khỏi nhà; ở bên ngoài",
+      "example_en": "The children are playing abroad in the yard",
+      "example_vi": "Những đứa trẻ đang chơi ngoài trời trong sân"
+    }
+  ]
+}

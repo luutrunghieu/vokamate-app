@@ -1,0 +1,135 @@
+{
+  "word": "above",
+  "phonetics": {
+    "us": "/əˈbʌv/",
+    "uk": "/əˈbʌv/"
+  },
+  "definitions": [
+    {
+      "word_vi": [
+        "trên",
+        "phía trên"
+      ],
+      "part_of_speech": [
+        "preposition"
+      ],
+      "sense_label": {
+        "en": "position",
+        "vi": "vị trí"
+      },
+      "popularity": 5,
+      "definition_en": "In or to a higher position than; overhead or at a higher level than something else.",
+      "definition_vi": "Ở hoặc đến vị trí cao hơn; phía trên đầu hoặc ở mức độ cao hơn một thứ khác.",
+      "example_en": "The picture hangs above the sofa.",
+      "example_vi": "Bức tranh treo trên ghế sofa."
+    },
+    {
+      "word_vi": [
+        "trên",
+        "cao hơn"
+      ],
+      "part_of_speech": [
+        "preposition"
+      ],
+      "sense_label": {
+        "en": "rank",
+        "vi": "cấp bậc"
+      },
+      "popularity": 5,
+      "definition_en": "At a higher rank, level, or importance than.",
+      "definition_vi": "Ở cấp bậc, mức độ hoặc tầm quan trọng cao hơn.",
+      "example_en": "He is above me in the company.",
+      "example_vi": "Anh ấy ở trên tôi trong công ty."
+    },
+    {
+      "word_vi": [
+        "trên",
+        "hơn"
+      ],
+      "part_of_speech": [
+        "preposition"
+      ],
+      "sense_label": {
+        "en": "amount",
+        "vi": "số lượng"
+      },
+      "popularity": 4,
+      "definition_en": "More than a specified amount, number, or level.",
+      "definition_vi": "Nhiều hơn một số lượng, con số hoặc mức độ được chỉ định.",
+      "example_en": "Temperatures rose above 30 degrees.",
+      "example_vi": "Nhiệt độ tăng trên 30 độ."
+    },
+    {
+      "word_vi": [
+        "trên cao",
+        "phía trên"
+      ],
+      "part_of_speech": [
+        "adverb"
+      ],
+      "sense_label": {
+        "en": "place",
+        "vi": "nơi chốn"
+      },
+      "popularity": 4,
+      "definition_en": "In or to a higher place; overhead.",
+      "definition_vi": "Ở hoặc đến nơi cao hơn; phía trên đầu.",
+      "example_en": "The birds were flying above.",
+      "example_vi": "Những con chim đang bay trên cao."
+    },
+    {
+      "word_vi": [
+        "trên đây",
+        "phía trước"
+      ],
+      "part_of_speech": [
+        "adverb"
+      ],
+      "sense_label": {
+        "en": "text",
+        "vi": "văn bản"
+      },
+      "popularity": 3,
+      "definition_en": "At an earlier point in a text or document.",
+      "definition_vi": "Tại một điểm sớm hơn trong văn bản hoặc tài liệu.",
+      "example_en": "As mentioned above, the rules are clear.",
+      "example_vi": "Như đã đề cập ở trên, các quy tắc rất rõ ràng."
+    },
+    {
+      "word_vi": [
+        "trên đây",
+        "phía trước"
+      ],
+      "part_of_speech": [
+        "adjective"
+      ],
+      "sense_label": {
+        "en": "text",
+        "vi": "văn bản"
+      },
+      "popularity": 3,
+      "definition_en": "Mentioned or written earlier in a text or document.",
+      "definition_vi": "Được đề cập hoặc viết trước đó trong văn bản hoặc tài liệu.",
+      "example_en": "Please refer to the above paragraph.",
+      "example_vi": "Vui lòng tham khảo đoạn văn trên đây."
+    },
+    {
+      "word_vi": [
+        "phần trên",
+        "nội dung trước"
+      ],
+      "part_of_speech": [
+        "noun"
+      ],
+      "sense_label": {
+        "en": "text",
+        "vi": "văn bản"
+      },
+      "popularity": 2,
+      "definition_en": "Something that is mentioned or written earlier in a text.",
+      "definition_vi": "Điều gì đó được đề cập hoặc viết trước đó trong văn bản.",
+      "example_en": "The above explains the basic concept.",
+      "example_vi": "Phần trên giải thích khái niệm cơ bản."
+    }
+  ]
+}

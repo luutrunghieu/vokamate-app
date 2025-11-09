@@ -1,0 +1,63 @@
+{
+  "word": "ability",
+  "phonetics": {
+    "us": "/əˈbɪləti/",
+    "uk": "/əˈbɪləti/"
+  },
+  "definitions": [
+    {
+      "word_vi": [
+        "khả năng",
+        "năng lực"
+      ],
+      "part_of_speech": [
+        "noun"
+      ],
+      "sense_label": {
+        "en": "capacity",
+        "vi": "năng lực"
+      },
+      "popularity": 5,
+      "definition_en": "The capacity or power to do something physical or mental.",
+      "definition_vi": "Khả năng hoặc năng lực để làm điều gì đó về thể chất hoặc tinh thần.",
+      "example_en": "She has the ability to solve complex problems.",
+      "example_vi": "Cô ấy có khả năng giải quyết các vấn đề phức tạp."
+    },
+    {
+      "word_vi": [
+        "tài năng",
+        "kỹ năng"
+      ],
+      "part_of_speech": [
+        "noun"
+      ],
+      "sense_label": {
+        "en": "talent",
+        "vi": "tài năng"
+      },
+      "popularity": 5,
+      "definition_en": "A particular talent, skill, or competence in a specific area.",
+      "definition_vi": "Một tài năng, kỹ năng hoặc năng lực đặc biệt trong một lĩnh vực cụ thể.",
+      "example_en": "His musical ability is impressive.",
+      "example_vi": "Khả năng âm nhạc của anh ấy rất ấn tượng."
+    },
+    {
+      "word_vi": [
+        "thẩm quyền",
+        "quyền hạn"
+      ],
+      "part_of_speech": [
+        "noun"
+      ],
+      "sense_label": {
+        "en": "authority",
+        "vi": "thẩm quyền"
+      },
+      "popularity": 3,
+      "definition_en": "Legal or official power or authority to act.",
+      "definition_vi": "Quyền lực hoặc thẩm quyền hợp pháp hoặc chính thức để hành động.",
+      "example_en": "The committee has the ability to make decisions.",
+      "example_vi": "Ủy ban có thẩm quyền đưa ra quyết định."
+    }
+  ]
+}

@@ -1,0 +1,135 @@
+{
+  "word": "above",
+  "phonetics": {
+    "us": "/əˈbʌv/",
+    "uk": "/əˈbʌv/"
+  },
+  "definitions": [
+    {
+      "word_vi": [
+        "ở trên",
+        "phía trên"
+      ],
+      "part_of_speech": [
+        "preposition"
+      ],
+      "sense_label": {
+        "en": "position",
+        "vi": "vị trí"
+      },
+      "popularity": 5,
+      "definition_en": "At a higher level or position than; over or on top of.",
+      "definition_vi": "Ở mức độ hoặc vị trí cao hơn; phía trên hoặc trên đỉnh của.",
+      "example_en": "The picture hangs above the fireplace.",
+      "example_vi": "Bức tranh treo phía trên lò sưởi."
+    },
+    {
+      "word_vi": [
+        "ở trên",
+        "phía trên"
+      ],
+      "part_of_speech": [
+        "adverb"
+      ],
+      "sense_label": {
+        "en": "place",
+        "vi": "nơi chốn"
+      },
+      "popularity": 5,
+      "definition_en": "In or to a higher place; overhead.",
+      "definition_vi": "Ở hoặc đến một nơi cao hơn; phía trên đầu.",
+      "example_en": "The sky above is clear and blue.",
+      "example_vi": "Bầu trời phía trên trong xanh."
+    },
+    {
+      "word_vi": [
+        "cao hơn",
+        "trên"
+      ],
+      "part_of_speech": [
+        "preposition"
+      ],
+      "sense_label": {
+        "en": "rank",
+        "vi": "cấp bậc"
+      },
+      "popularity": 4,
+      "definition_en": "Higher in rank, status, or quality than.",
+      "definition_vi": "Cao hơn về cấp bậc, địa vị hoặc chất lượng so với.",
+      "example_en": "She is above me in the company hierarchy.",
+      "example_vi": "Cô ấy cao hơn tôi trong hệ thống cấp bậc công ty."
+    },
+    {
+      "word_vi": [
+        "hơn",
+        "trên"
+      ],
+      "part_of_speech": [
+        "preposition"
+      ],
+      "sense_label": {
+        "en": "amount",
+        "vi": "số lượng"
+      },
+      "popularity": 4,
+      "definition_en": "More than (a particular amount, rate, or level).",
+      "definition_vi": "Nhiều hơn (một số lượng, tỷ lệ hoặc mức độ cụ thể).",
+      "example_en": "Temperatures rose above 30 degrees.",
+      "example_vi": "Nhiệt độ tăng trên 30 độ."
+    },
+    {
+      "word_vi": [
+        "ở trên",
+        "nói trên"
+      ],
+      "part_of_speech": [
+        "adjective"
+      ],
+      "sense_label": {
+        "en": "text",
+        "vi": "văn bản"
+      },
+      "popularity": 3,
+      "definition_en": "Mentioned or written earlier in a text or document.",
+      "definition_vi": "Được đề cập hoặc viết trước đó trong một văn bản hoặc tài liệu.",
+      "example_en": "Please refer to the above instructions.",
+      "example_vi": "Vui lòng tham khảo các hướng dẫn nói trên."
+    },
+    {
+      "word_vi": [
+        "điều nói trên",
+        "phần trên"
+      ],
+      "part_of_speech": [
+        "noun"
+      ],
+      "sense_label": {
+        "en": "reference",
+        "vi": "tham chiếu"
+      },
+      "popularity": 3,
+      "definition_en": "Something that is mentioned or written earlier in a text.",
+      "definition_vi": "Điều gì đó được đề cập hoặc viết trước đó trong một văn bản.",
+      "example_en": "The above shows the main results.",
+      "example_vi": "Phần trên cho thấy các kết quả chính."
+    },
+    {
+      "word_vi": [
+        "trên",
+        "cao hơn"
+      ],
+      "part_of_speech": [
+        "preposition"
+      ],
+      "sense_label": {
+        "en": "morality",
+        "vi": "đạo đức"
+      },
+      "popularity": 2,
+      "definition_en": "Too good or honest to do something dishonest or immoral.",
+      "definition_vi": "Quá tốt hoặc trung thực để làm điều gì đó không trung thực hoặc vô đạo đức.",
+      "example_en": "He is above lying to his friends.",
+      "example_vi": "Anh ấy không bao giờ nói dối bạn bè."
+    }
+  ]
+}

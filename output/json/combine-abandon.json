@@ -1,0 +1,99 @@
+{
+  "word": "abandon",
+  "phonetics": {
+    "us": "/əˈbændən/",
+    "uk": "/əˈbændən/"
+  },
+  "definitions": [
+    {
+      "word_vi": [
+        "bỏ rơi",
+        "từ bỏ"
+      ],
+      "part_of_speech": [
+        "verb"
+      ],
+      "sense_label": {
+        "en": "leave",
+        "vi": "rời bỏ"
+      },
+      "popularity": 5,
+      "definition_en": "To leave someone or something permanently, especially when one should stay or has a responsibility to remain.",
+      "definition_vi": "Rời bỏ ai đó hoặc thứ gì đó vĩnh viễn, đặc biệt khi người ta nên ở lại hoặc có trách nhiệm phải ở lại.",
+      "example_en": "He abandoned his family.",
+      "example_vi": "Anh ấy đã bỏ rơi gia đình mình."
+    },
+    {
+      "word_vi": [
+        "từ bỏ",
+        "bỏ cuộc"
+      ],
+      "part_of_speech": [
+        "verb"
+      ],
+      "sense_label": {
+        "en": "stop",
+        "vi": "dừng lại"
+      },
+      "popularity": 5,
+      "definition_en": "To cease doing or pursuing something, especially before completion; to give up.",
+      "definition_vi": "Ngừng làm hoặc theo đuổi điều gì đó, đặc biệt là trước khi hoàn thành; từ bỏ.",
+      "example_en": "She abandoned her studies.",
+      "example_vi": "Cô ấy đã từ bỏ việc học của mình."
+    },
+    {
+      "word_vi": [
+        "rời bỏ",
+        "bỏ đi"
+      ],
+      "part_of_speech": [
+        "verb"
+      ],
+      "sense_label": {
+        "en": "vacate",
+        "vi": "bỏ trống"
+      },
+      "popularity": 4,
+      "definition_en": "To leave a place, vehicle, or building empty or unoccupied, typically in haste or permanently.",
+      "definition_vi": "Rời bỏ một địa điểm, phương tiện hoặc tòa nhà để trống hoặc không có người ở, thường là vội vã hoặc vĩnh viễn.",
+      "example_en": "They abandoned the car on the road.",
+      "example_vi": "Họ đã bỏ lại chiếc xe trên đường."
+    },
+    {
+      "word_vi": [
+        "sự phóng túng",
+        "sự buông thả"
+      ],
+      "part_of_speech": [
+        "noun"
+      ],
+      "sense_label": {
+        "en": "freedom",
+        "vi": "tự do"
+      },
+      "popularity": 3,
+      "definition_en": "Complete lack of inhibition or restraint; uncontrolled freedom of behavior or emotion.",
+      "definition_vi": "Sự thiếu hoàn toàn sự kiềm chế hoặc hạn chế; tự do không kiểm soát trong hành vi hoặc cảm xúc.",
+      "example_en": "They danced with wild abandon.",
+      "example_vi": "Họ nhảy với sự phóng túng hoang dại."
+    },
+    {
+      "word_vi": [
+        "từ bỏ",
+        "nhường lại"
+      ],
+      "part_of_speech": [
+        "verb"
+      ],
+      "sense_label": {
+        "en": "surrender",
+        "vi": "đầu hàng"
+      },
+      "popularity": 2,
+      "definition_en": "To surrender or relinquish a claim, right, or possession formally.",
+      "definition_vi": "Đầu hàng hoặc từ bỏ một yêu sách, quyền lợi hoặc tài sản một cách chính thức.",
+      "example_en": "He abandoned his claim to the property.",
+      "example_vi": "Anh ấy đã từ bỏ yêu sách của mình đối với tài sản."
+    }
+  ]
+}

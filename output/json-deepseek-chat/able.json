@@ -1,0 +1,46 @@
+{
+  "word": "able",
+  "phonetics": {
+    "us": "/ˈeɪ.bəl/",
+    "uk": "/ˈeɪ.bəl/"
+  },
+  "definitions": [
+    {
+      "word_vi": [
+        "có thể",
+        "có khả năng"
+      ],
+      "part_of_speech": [
+        "adjective"
+      ],
+      "sense_label": {
+        "en": "capability",
+        "vi": "khả năng"
+      },
+      "popularity": 5,
+      "definition_en": "Having the power, skill, means, or opportunity to do something.",
+      "definition_vi": "Có quyền lực, kỹ năng, phương tiện hoặc cơ hội để làm điều gì đó.",
+      "example_en": "She is able to speak three languages.",
+      "example_vi": "Cô ấy có thể nói ba thứ tiếng."
+    },
+    {
+      "word_vi": [
+        "có năng lực",
+        "tài giỏi",
+        "giỏi giang"
+      ],
+      "part_of_speech": [
+        "adjective"
+      ],
+      "sense_label": {
+        "en": "talent",
+        "vi": "tài năng"
+      },
+      "popularity": 4,
+      "definition_en": "Having considerable skill, proficiency, or intelligence; talented or competent.",
+      "definition_vi": "Có kỹ năng, sự thành thạo hoặc trí tuệ đáng kể; tài năng hoặc có năng lực.",
+      "example_en": "He is an able student.",
+      "example_vi": "Anh ấy là một học sinh giỏi."
+    }
+  ]
+}

@@ -1,0 +1,82 @@
+{
+  "word": "abortion",
+  "phonetics": {
+    "us": "/əˈbɔːrʃn/",
+    "uk": "/əˈbɔːʃn/"
+  },
+  "definitions": [
+    {
+      "word_vi": [
+        "phá thai",
+        "sự phá thai"
+      ],
+      "part_of_speech": [
+        "noun"
+      ],
+      "sense_label": {
+        "en": "termination",
+        "vi": "chấm dứt"
+      },
+      "popularity": 5,
+      "definition_en": "The deliberate termination of a human pregnancy, most often performed during the first 28 weeks of pregnancy.",
+      "definition_vi": "Sự chấm dứt có chủ ý của thai kỳ ở người, thường được thực hiện trong 28 tuần đầu của thai kỳ.",
+      "example_en": "The clinic provides safe abortion services.",
+      "example_vi": "Phòng khám cung cấp dịch vụ phá thai an toàn."
+    },
+    {
+      "word_vi": [
+        "sẩy thai",
+        "sảy thai tự nhiên"
+      ],
+      "part_of_speech": [
+        "noun"
+      ],
+      "sense_label": {
+        "en": "miscarriage",
+        "vi": "sẩy thai"
+      },
+      "popularity": 4,
+      "definition_en": "The spontaneous expulsion of a fetus from the womb before it is able to survive independently; a miscarriage.",
+      "definition_vi": "Sự đào thải tự nhiên của thai nhi từ tử cung trước khi nó có thể sống độc lập; sẩy thai.",
+      "example_en": "She experienced an abortion in her first trimester.",
+      "example_vi": "Cô ấy bị sẩy thai trong tam cá nguyệt đầu tiên."
+    },
+    {
+      "word_vi": [
+        "thất bại",
+        "hỏng",
+        "dở dang"
+      ],
+      "part_of_speech": [
+        "noun"
+      ],
+      "sense_label": {
+        "en": "failure",
+        "vi": "thất bại"
+      },
+      "popularity": 3,
+      "definition_en": "An object or undertaking that is unfinished, incomplete, or unsuccessful; a failure.",
+      "definition_vi": "Một vật thể hoặc công việc chưa hoàn thành, không đầy đủ hoặc không thành công; một thất bại.",
+      "example_en": "The project was an abortion from the start.",
+      "example_vi": "Dự án là một thất bại ngay từ đầu."
+    },
+    {
+      "word_vi": [
+        "ngưng phát triển",
+        "teo đi"
+      ],
+      "part_of_speech": [
+        "noun"
+      ],
+      "sense_label": {
+        "en": "arrest",
+        "vi": "ngưng trệ"
+      },
+      "popularity": 2,
+      "definition_en": "The arrest of development of an organ or part of an organism so that it remains imperfect or is absorbed.",
+      "definition_vi": "Sự ngừng phát triển của một cơ quan hoặc một phần của sinh vật khiến nó không hoàn thiện hoặc bị tiêu biến.",
+      "example_en": "The embryo showed signs of abortion.",
+      "example_vi": "Phôi thai có dấu hiệu ngưng phát triển."
+    }
+  ]
+}

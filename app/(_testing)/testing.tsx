@@ -27,7 +27,7 @@ const testItems: TestItem[] = [
     title: "Inputs",
     icon: "text-outline",
     route: "input-test",
-    available: false,
+    available: true,
   },
   {
     id: "cards",
